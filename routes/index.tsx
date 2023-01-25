@@ -1,24 +1,31 @@
 import { Head } from "$fresh/runtime.ts";
-import Counter from "../islands/Counter.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { Post } from "../types.ts";
+import { listPosts } from "../utils/posts.ts";
 
-export default function Home() {
+export const handler: Handlers = {
+  async GET(req, ctx) {
+    const posts: Post[] = await listPosts();
+    return ctx.render({ posts });
+  },
+};
+
+export default function Home(props: PageProps) {
+  const { posts } = props.data;
+
   return (
     <>
       <Head>
         <title>Fresh App</title>
       </Head>
       <div>
-        <img
-          src="/logo.svg"
-          width="128"
-          height="128"
-          alt="the fresh logo: a sliced lemon dripping with juice"
-        />
-        <p>
-          Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
-          file, and refresh.
-        </p>
-        <Counter start={3} />
+        <h1>Blog posts</h1>
+        {posts.map((post: Post) => (
+          <article>
+            <a key={post.id} href={`/blog/${post.id}`}>{post.title}</a>
+            <time>{Intl.DateTimeFormat("es").format(post.date)}</time>
+          </article>
+        ))}
       </div>
     </>
   );

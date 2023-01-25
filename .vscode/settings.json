@@ -3,5 +3,8 @@
   "deno.lint": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
   "editor.formatOnSave": true,
-  "typescript.format.semicolons": "remove"
+  "typescript.format.semicolons": "remove",
+  "[md]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
