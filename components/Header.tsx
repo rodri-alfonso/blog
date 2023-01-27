@@ -5,7 +5,7 @@ import { HEADER_LINKS } from "../config.ts";
 export default function Header({ currentPath }: { currentPath: string }) {
   return (
     <header class="flex justify-between">
-      {/* <Brand /> */}
+      <Brand />
       <nav class="flex gap-4">
         {HEADER_LINKS.map((link) => (
           <Link

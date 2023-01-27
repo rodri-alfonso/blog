@@ -13,7 +13,7 @@ const articlesMock = [
 export default function TopArticles() {
   return (
     <Section title="Highlighted articles">
-      <>
+      <div class="grid gap-2 pt-2">
         <div>
           {articlesMock.map((article, index) => (
             <Article
@@ -25,9 +25,9 @@ export default function TopArticles() {
           ))}
         </div>
         <a href="/articles">
-          <Body text="See all articles" />
+          <Body text="See all articles" color="grey" />
         </a>
-      </>
+      </div>
     </Section>
   );
 }
