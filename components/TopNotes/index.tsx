@@ -45,18 +45,15 @@ function Card(props: ICardProps) {
 export default function TopNotes() {
   return (
     <Section title="Pinned notes">
-      <>
-        <div class="grid gap-7 grid-cols-4">
-          {notesMock.map((note) => (
-            <Card
-              href={note.href}
-              title={note.title}
-              description={note.description}
-            />
-          ))}
-        </div>
-        <a href="/notes">See all notes</a>
-      </>
+      <div class="grid gap-7 grid-cols-4">
+        {notesMock.map((note) => (
+          <Card
+            href={note.href}
+            title={note.title}
+            description={note.description}
+          />
+        ))}
+      </div>
     </Section>
   );
 }

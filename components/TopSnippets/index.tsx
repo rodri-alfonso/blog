@@ -37,17 +37,14 @@ function Card(props: ICardProps) {
 export default function TopSnippets() {
   return (
     <Section title="Pinned snippets">
-      <>
-        <div class="grid gap-7 grid-cols-4">
-          {snippetsMock.map((snipp) => (
-            <Card
-              href={snipp.href}
-              title={snipp.title}
-            />
-          ))}
-        </div>
-        <a href="/snippets">See all snippets</a>
-      </>
+      <div class="grid gap-7 grid-cols-4">
+        {snippetsMock.map((snipp) => (
+          <Card
+            href={snipp.href}
+            title={snipp.title}
+          />
+        ))}
+      </div>
     </Section>
   );
 }

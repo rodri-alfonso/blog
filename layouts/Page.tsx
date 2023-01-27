@@ -10,7 +10,7 @@ export interface IPageProps {
 
 export default function Page(props: IPageProps) {
   return (
-    <main>
+    <main class="m-auto p-8 w-full max-w-screen-lg">
       <Head>
         <title>{props.title}</title>
       </Head>
