@@ -5,6 +5,7 @@ import Page from "../layouts/Page.tsx";
 import type { Post } from "../utils/types.ts";
 import TopArticles from "../components/TopArticles/index.tsx";
 import TopNotes from "../components/TopNotes/index.tsx";
+import TopSnippets from "../components/TopSnippets/index.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {
@@ -21,8 +22,9 @@ export default function Home(props: PageProps) {
       <div class="grid gap-7">
         <h1>Dashboard</h1>
 
-        <TopArticles />
         <TopNotes />
+        <TopSnippets />
+        <TopArticles />
       </div>
     </Page>
   );

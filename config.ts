@@ -11,4 +11,8 @@ export const HEADER_LINKS = [
 		href: '/notes',
 		title: 'Notes',
 	},
+	{
+		href: '/snippets',
+		title: 'Snippets',
+	},
 ]
