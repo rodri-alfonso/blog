@@ -4,6 +4,7 @@ import { listPosts } from "../utils/posts.ts";
 import Page from "../layouts/Page.tsx";
 import type { Post } from "../utils/types.ts";
 import TopArticles from "../components/TopArticles/index.tsx";
+import TopNotes from "../components/TopNotes/index.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {
@@ -17,17 +18,11 @@ export default function Home(props: PageProps) {
 
   return (
     <Page title="Deno Page" path={props.url.pathname}>
-      <div>
+      <div class="grid gap-7">
         <h1>Dashboard</h1>
 
         <TopArticles />
-
-        <section>
-          <h2>Pinned notes</h2>
-        </section>
-        <section>
-          <h2>Pinned snippets</h2>
-        </section>
+        <TopNotes />
       </div>
     </Page>
   );
