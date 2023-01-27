@@ -1,4 +1,5 @@
 import { JSX } from "preact";
+import Body from "../theme/typography/Body.tsx";
 
 interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
   title: string;
@@ -10,12 +11,12 @@ export default function Link(props: LinkProps) {
 
   return (
     <a
-      class={"hover:bg-blue-200" +
-        (props.isActive ? " bg-blue-400" : "")}
+      class={"py-1 px-2.5 rounded-2xl hover:bg-gray-200" +
+        (props.isActive ? " bg-gray-800 text-gray-100 hover:bg-gray-700" : "")}
       href={props.href}
       {...rest}
     >
-      {props.title}
+      <Body text={props.title} variant="medium" />
     </a>
   );
 }

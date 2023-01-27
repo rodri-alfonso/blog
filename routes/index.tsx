@@ -7,6 +7,8 @@ import TopArticles from "../components/TopArticles/index.tsx";
 import TopNotes from "../components/TopNotes/index.tsx";
 import TopSnippets from "../components/TopSnippets/index.tsx";
 
+import Headline from "../theme/typography/Headline.tsx";
+
 export const handler: Handlers = {
   async GET(_, ctx) {
     const posts: Post[] = await listPosts();
@@ -19,8 +21,8 @@ export default function Home(props: PageProps) {
 
   return (
     <Page title="Deno Page" path={props.url.pathname}>
-      <div class="grid gap-7">
-        <h1>Dashboard</h1>
+      <div class="grid gap-7 pt-14">
+        <Headline variant="bold" text="Dashboard" />
 
         <TopNotes />
         <TopSnippets />

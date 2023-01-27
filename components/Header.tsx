@@ -1,10 +1,12 @@
+import Brand from "../theme/Brand.tsx";
 import Link from "./Link.tsx";
 import { HEADER_LINKS } from "../config.ts";
 
 export default function Header({ currentPath }: { currentPath: string }) {
   return (
     <header class="flex justify-between">
-      <nav class="flex gap-2">
+      {/* <Brand /> */}
+      <nav class="flex gap-4">
         {HEADER_LINKS.map((link) => (
           <Link
             key={link.title}

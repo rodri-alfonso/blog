@@ -2,6 +2,7 @@ interface IDateProps {
   date: Date;
   locale?: "es" | "en";
   class?: string;
+  variant?: "normal" | "medium" | "bold";
 }
 
 export default function Date(props: IDateProps) {

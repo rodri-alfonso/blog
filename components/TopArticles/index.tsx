@@ -1,5 +1,6 @@
 import Section from "../../layouts/Section.tsx";
 import Article from "./Article.tsx";
+import Body from "../../theme/typography/Body.tsx";
 
 const articlesMock = [
   { title: "Article 1", date: new Date(), href: "/articles/some" },
@@ -23,7 +24,9 @@ export default function TopArticles() {
             />
           ))}
         </div>
-        <a href="/articles">See all articles</a>
+        <a href="/articles">
+          <Body text="See all articles" />
+        </a>
       </>
     </Section>
   );
