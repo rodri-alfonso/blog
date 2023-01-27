@@ -1,4 +1,4 @@
-import type { Post } from '../types.ts'
+import type { Post } from './types.ts'
 import { extract } from '$std-encode/any.ts'
 
 import { render } from '$deno-gfm'

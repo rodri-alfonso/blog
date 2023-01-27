@@ -1,7 +1,8 @@
-import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Post } from "../types.ts";
+
 import { listPosts } from "../utils/posts.ts";
+import Page from "../layouts/Page.tsx";
+import type { Post } from "../utils/types.ts";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
@@ -14,10 +15,7 @@ export default function Home(props: PageProps) {
   const { posts } = props.data;
 
   return (
-    <>
-      <Head>
-        <title>Fresh App</title>
-      </Head>
+    <Page title="Deno Page" path={props.url.pathname}>
       <div>
         <h1>Blog posts</h1>
         {posts.map((post: Post) => (
@@ -27,6 +25,6 @@ export default function Home(props: PageProps) {
           </article>
         ))}
       </div>
-    </>
+    </Page>
   );
 }
