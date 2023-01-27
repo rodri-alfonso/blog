@@ -3,6 +3,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { listPosts } from "../utils/posts.ts";
 import Page from "../layouts/Page.tsx";
 import type { Post } from "../utils/types.ts";
+import Date from "../components/Date.tsx";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
@@ -17,11 +18,11 @@ export default function Home(props: PageProps) {
   return (
     <Page title="Deno Page" path={props.url.pathname}>
       <div>
-        <h1>Blog posts</h1>
+        <h1>Dashboard</h1>
         {posts.map((post: Post) => (
           <article>
             <a key={post.id} href={`/blog/${post.id}`}>{post.title}</a>
-            <time>{Intl.DateTimeFormat("es").format(post.date)}</time>
+            <Date date={post.date} />
           </article>
         ))}
       </div>
