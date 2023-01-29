@@ -4,7 +4,7 @@ import Header from "../components/Header.tsx";
 
 export interface IPageProps {
   title: string;
-  children?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
   path: string;
 }
 
