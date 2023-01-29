@@ -11,10 +11,12 @@ interface ISectionProps {
 
 export default function Section(props: ISectionProps) {
   return (
-    <section class={` ${props.class}`}>
+    <section>
       <Subtitle text={props.title} variant="medium" />
       <Body text={props.description || ""} variant="medium" />
-      {props.children}
+      <div class={`pt-2 ${props.class}`}>
+        {props.children}
+      </div>
     </section>
   );
 }

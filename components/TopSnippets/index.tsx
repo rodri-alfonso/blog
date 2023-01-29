@@ -1,4 +1,6 @@
 import Section from "../../layouts/Section.tsx";
+import Body from "../../theme/typography/Body.tsx";
+import Pinned from "../../icons/Pinned.tsx";
 
 const snippetsMock = [
   {
@@ -26,10 +28,12 @@ interface ICardProps {
 
 function Card(props: ICardProps) {
   return (
-    <a href={props.href} class="border-1 border-blue-100">
-      <p>
-        {props.title}
-      </p>
+    <a
+      href={props.href}
+      class="border-1 border-blue-100 p-3 rounded flex gap-2 items-center relative"
+    >
+      <Pinned width={20} height={20} />
+      <Body text={props.title} variant="medium" />
     </a>
   );
 }
