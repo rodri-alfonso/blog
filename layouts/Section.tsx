@@ -6,7 +6,7 @@ interface ISectionProps {
   title: string;
   description?: string;
   class?: string;
-  children?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
 }
 
 export default function Section(props: ISectionProps) {
