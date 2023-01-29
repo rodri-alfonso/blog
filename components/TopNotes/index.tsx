@@ -1,6 +1,6 @@
+import Pinned from "../../icons/Pinned.tsx";
 import Section from "../../layouts/Section.tsx";
 import Body from "../../theme/typography/Body.tsx";
-import Pinned from "../../icons/PinnedIcon.tsx";
 
 const notesMock = [
   {
