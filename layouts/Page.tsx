@@ -16,7 +16,9 @@ export default function Page(props: IPageProps) {
       </Head>
       {props.path && <Header currentPath={props.path} />}
 
-      {props.children}
+      <div class="bg-white col-span-6 rounded-2xl p-6">
+        {props.children}
+      </div>
     </main>
   );
 }

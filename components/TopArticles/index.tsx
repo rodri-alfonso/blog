@@ -14,19 +14,14 @@ export default function TopArticles() {
   return (
     <Section title="Highlighted articles">
       <div class="grid gap-2 pt-2">
-        <div>
-          {articlesMock.map((article, index) => (
-            <Article
-              title={article.title}
-              index={index + 1}
-              date={article.date}
-              href={article.href}
-            />
-          ))}
-        </div>
-        <a href="/articles">
-          <Body text="See all articles" color="grey" />
-        </a>
+        {articlesMock.map((article, index) => (
+          <Article
+            title={article.title}
+            index={index + 1}
+            date={article.date}
+            href={article.href}
+          />
+        ))}
       </div>
     </Section>
   );

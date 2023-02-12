@@ -16,7 +16,7 @@ export default function Date(props: IDateProps) {
 
   return (
     <time class={`${VARIANT_STYLE_MAP[variant || "normal"]} ${className}`}>
-      {Intl.DateTimeFormat(locale).format(date)}
+      {Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(date)}
     </time>
   );
 }

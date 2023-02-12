@@ -5,9 +5,7 @@ import Page from "../layouts/Page.tsx";
 import type { Post } from "../utils/types.ts";
 import TopArticles from "../components/TopArticles/index.tsx";
 import TopNotes from "../components/TopNotes/index.tsx";
-import TopSnippets from "../components/TopSnippets/index.tsx";
-
-import Headline from "../theme/typography/Headline.tsx";
+import Hero from "../components/Hero.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {
@@ -21,11 +19,9 @@ export default function Home(props: PageProps) {
 
   return (
     <Page title="Deno Page" path={props.url.pathname}>
-      <div class="grid gap-7 pt-14">
-        <Headline variant="bold" text="Dashboard" />
-
+      <div class="grid gap-9 pt-8">
+        <Hero />
         <TopNotes />
-        <TopSnippets />
         <TopArticles />
       </div>
     </Page>

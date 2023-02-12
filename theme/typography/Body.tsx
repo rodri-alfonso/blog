@@ -11,7 +11,7 @@ export default function Body(props: ITypographyProps) {
     contrast: "text-white",
     grey: "text-gray-500",
     primary: "text-blue-500",
-    default: "text-black",
+    default: "text-current",
   };
 
   const className = VARIANT_STYLE_MAP[props.variant || "normal"] + " " +
