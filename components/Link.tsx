@@ -11,12 +11,12 @@ export default function Link(props: LinkProps) {
 
   return (
     <a
-      class={"py-1 px-2.5 rounded-2xl hover:bg-gray-200" +
-        (props.isActive ? " bg-gray-700 text-gray-100 hover:bg-gray-700" : "")}
+      class={"py-1 px-1.5 lowercase text-black hover:border-b-4 hover:border-gray-300 active:scale-95 transition-all " +
+        (props.isActive ? " border-b-4 border-black hover:border-black " : "")}
       href={props.href}
       {...rest}
     >
-      <Body text={props.title} variant="medium" />
+      <Body text={props.title} variant="bold" />
     </a>
   );
 }

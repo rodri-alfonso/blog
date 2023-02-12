@@ -18,6 +18,11 @@ const notesMock = [
     description: "Some description for note",
     href: "/notes/some",
   },
+  {
+    title: "Note 3",
+    description: "Some description for note",
+    href: "/notes/some",
+  },
 ];
 
 interface ICardProps {
@@ -29,9 +34,8 @@ function Card(props: ICardProps) {
   return (
     <a
       href={props.href}
-      class="border-1 border-blue-100 p-3 flex items-center gap-2"
+      class="border-1 border-gray-300 rounded p-3 flex items-center gap-2 hover:scale-105 active:scale-95 transition-all"
     >
-      <Pinned width={20} height={20} />
       <Body text={props.title} variant="medium" />
     </a>
   );
@@ -39,7 +43,7 @@ function Card(props: ICardProps) {
 
 export default function TopNotes() {
   return (
-    <Section title="Pinned notes" class="grid gap-7 grid-cols-3">
+    <Section title="Highlighted notes" class="grid gap-7 grid-cols-4 pt-7">
       {notesMock.map((note) => (
         <Card
           href={note.href}

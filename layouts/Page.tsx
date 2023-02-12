@@ -5,7 +5,7 @@ import Header from "../components/Header.tsx";
 export interface IPageProps {
   title: string;
   children?: JSX.Element | JSX.Element[];
-  path: string;
+  path?: string;
 }
 
 export default function Page(props: IPageProps) {
@@ -14,8 +14,11 @@ export default function Page(props: IPageProps) {
       <Head>
         <title>{props.title}</title>
       </Head>
-      <Header currentPath={props.path} />
-      {props.children}
+      {props.path && <Header currentPath={props.path} />}
+
+      <div class="bg-white col-span-6 rounded-2xl p-6">
+        {props.children}
+      </div>
     </main>
   );
 }
