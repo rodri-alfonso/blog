@@ -1,25 +1,17 @@
 import Section from "../../layouts/Section.tsx";
 import Article from "./Article.tsx";
-import Body from "../../theme/typography/Body.tsx";
+import { PartialPost } from "../../utils/types.ts";
 
-const articlesMock = [
-  { title: "Article 1", date: new Date(), href: "/articles/some" },
-  { title: "Article 2", date: new Date(), href: "/articles/some" },
-  { title: "Article 3", date: new Date(), href: "/articles/some" },
-  { title: "Article 4", date: new Date(), href: "/articles/some" },
-  { title: "Article 5", date: new Date(), href: "/articles/some" },
-];
-
-export default function TopArticles() {
+export default function TopArticles(props: { articles: PartialPost[] }) {
   return (
     <Section title="Highlighted articles">
       <div class="grid gap-2 pt-2">
-        {articlesMock.map((article, index) => (
+        {props.articles.map((article, index) => (
           <Article
             title={article.title}
             index={index + 1}
             date={article.date}
-            href={article.href}
+            href={`/articles/${article.id}`}
           />
         ))}
       </div>

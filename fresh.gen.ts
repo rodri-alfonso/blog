@@ -5,25 +5,23 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/articles/[id].tsx";
 import * as $1 from "./routes/articles/index.tsx";
-import * as $2 from "./routes/blog/[id].tsx";
-import * as $3 from "./routes/index.tsx";
-import * as $4 from "./routes/notes/[id].tsx";
-import * as $5 from "./routes/notes/index.tsx";
-import * as $6 from "./routes/snippets/[id].tsx";
-import * as $7 from "./routes/snippets/index.tsx";
-import * as $8 from "./routes/typography/index.tsx";
+import * as $2 from "./routes/index.tsx";
+import * as $3 from "./routes/notes/[id].tsx";
+import * as $4 from "./routes/notes/index.tsx";
+import * as $5 from "./routes/snippets/[id].tsx";
+import * as $6 from "./routes/snippets/index.tsx";
+import * as $7 from "./routes/typography/index.tsx";
 
 const manifest = {
   routes: {
     "./routes/articles/[id].tsx": $0,
     "./routes/articles/index.tsx": $1,
-    "./routes/blog/[id].tsx": $2,
-    "./routes/index.tsx": $3,
-    "./routes/notes/[id].tsx": $4,
-    "./routes/notes/index.tsx": $5,
-    "./routes/snippets/[id].tsx": $6,
-    "./routes/snippets/index.tsx": $7,
-    "./routes/typography/index.tsx": $8,
+    "./routes/index.tsx": $2,
+    "./routes/notes/[id].tsx": $3,
+    "./routes/notes/index.tsx": $4,
+    "./routes/snippets/[id].tsx": $5,
+    "./routes/snippets/index.tsx": $6,
+    "./routes/typography/index.tsx": $7,
   },
   islands: {},
   baseUrl: import.meta.url,
