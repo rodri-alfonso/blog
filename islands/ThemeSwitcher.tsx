@@ -8,7 +8,7 @@ export default function ThemeSwitcher() {
   return (
     <button
       onClick={() => setIsLight(!isLight)}
-      class="active:scale-95 transition-all focus:border-gray-400"
+      class="active:scale-95 transition-all focus:border-gray-400 text-gray-400 rounded-md hover:text-gray-800 focus:outline-black  "
     >
       {isLight ? <Sun /> : <Moon />}
     </button>
