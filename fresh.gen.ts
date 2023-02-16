@@ -11,6 +11,7 @@ import * as $4 from "./routes/notes/index.tsx";
 import * as $5 from "./routes/snippets/[id].tsx";
 import * as $6 from "./routes/snippets/index.tsx";
 import * as $7 from "./routes/typography/index.tsx";
+import * as $$0 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -23,7 +24,9 @@ const manifest = {
     "./routes/snippets/index.tsx": $6,
     "./routes/typography/index.tsx": $7,
   },
-  islands: {},
+  islands: {
+    "./islands/ThemeSwitcher.tsx": $$0,
+  },
   baseUrl: import.meta.url,
   config,
 };
