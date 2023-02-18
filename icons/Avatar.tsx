@@ -3,8 +3,7 @@ interface AvatarProps {
   color?: string;
   contrast?: string;
   background?: "bg-blue-200" | "bg-gray-100" | "bg-gray-700";
-  width?: number;
-  height?: number;
+  size?: number;
 }
 
 export default function Avatar(props: AvatarProps) {
@@ -13,15 +12,14 @@ export default function Avatar(props: AvatarProps) {
     color = "#000000",
     contrast = "#ffffff",
     className,
-    height = 126,
-    width = 126,
+    size = 126,
   } = props;
 
   return (
     <picture class={`rounded-full ${background}`}>
       <svg
-        width={width}
-        height={height}
+        width={size}
+        height={size}
         viewBox="0 0 126 126"
         fill="none"
         class={className}

@@ -30,7 +30,7 @@ export default function Header({ currentPath }: { currentPath: string }) {
     <header
       class={header_css}
     >
-      <Avatar width={40} height={40} background="bg-gray-100" />
+      <Avatar size={32} background="bg-gray-100" />
       <nav class="flex gap-4">
         {HEADER_LINKS.map((link) => (
           <Link
