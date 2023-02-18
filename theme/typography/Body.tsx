@@ -15,7 +15,7 @@ export default function Body(props: ITypographyProps) {
   };
 
   const className = VARIANT_STYLE_MAP[props.variant || "normal"] + " " +
-    COLORS_STYLE_MAP[props.color || "default"];
+    COLORS_STYLE_MAP[props.color || "default"] + " " + props.class;
 
   return (
     <p

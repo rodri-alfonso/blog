@@ -16,7 +16,6 @@ export const handler: Handlers = {
 
 export default function Home(props: PageProps) {
   const { posts } = props.data;
-  console.log("🚀 ~ file: index.tsx:19 ~ posts", posts);
 
   return (
     <Page title="Deno Page" path={props.url.pathname}>

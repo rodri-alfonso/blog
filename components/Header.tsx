@@ -3,6 +3,7 @@ import { JSX } from "preact";
 import Body from "../theme/typography/Body.tsx";
 import ThemeSwitcher from "../islands/ThemeSwitcher.tsx";
 import Avatar from "../icons/Avatar.tsx";
+import { css } from "twind/css";
 
 interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
   title: string;
@@ -26,7 +27,9 @@ export default function Header({ currentPath }: { currentPath: string }) {
   }
 
   return (
-    <header class="flex justify-between items-center">
+    <header
+      class={header_css}
+    >
       <Avatar width={40} height={40} background="bg-gray-100" />
       <nav class="flex gap-4">
         {HEADER_LINKS.map((link) => (
@@ -42,3 +45,16 @@ export default function Header({ currentPath }: { currentPath: string }) {
     </header>
   );
 }
+
+const header_css = css({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  position: "sticky",
+  top: 0,
+  padding: "10px",
+  background: "rgba(255, 255, 255, 0.77)",
+  backdropFilter: "blur(7.9px)",
+  border: "1px solid rgba(255, 255, 255, 0.31)",
+  zIndex: 1,
+}) as any;

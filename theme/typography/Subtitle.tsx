@@ -15,7 +15,7 @@ export default function Subtitle(props: ITypographyProps) {
   };
 
   const className = VARIANT_STYLE_MAP[props.variant || "normal"] + " " +
-    COLORS_MAP[props.color || "default"];
+    COLORS_MAP[props.color || "default"] + " " + props.class;
 
   return (
     <h2 class={className}>
