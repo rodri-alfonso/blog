@@ -29,7 +29,7 @@ export default function Articles(props: PageProps) {
 
   return (
     <Page title="Artciles page" path={props.url.pathname}>
-      <Subtitle text="What I'ben writen" variant="bold" class="pt-6" />
+      <Subtitle text="What I've Written" variant="bold" class="pt-6" />
       <Body
         text={`${posts.length} Articles about UI architecture, design systems, CSS and frontend topics like web performance`}
         variant="medium"
