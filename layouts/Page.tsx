@@ -10,14 +10,16 @@ export interface IPageProps {
 
 export default function Page(props: IPageProps) {
   return (
-    <main class="m-auto p-8 w-full max-w-screen-lg">
+    <main class="p-4 w-screen h-screen dark:bg-black">
       <Head>
         <title>{props.title}</title>
       </Head>
-      {props.path && <Header currentPath={props.path} />}
+      <div class="max-w-screen-lg mx-auto">
+        {props.path && <Header currentPath={props.path} />}
 
-      <div class="bg-white col-span-6 rounded-2xl p-6">
-        {props.children}
+        <div class="dark:bg-black transition-all bg-white col-span-6 rounded-2xl p-6">
+          {props.children}
+        </div>
       </div>
     </main>
   );
