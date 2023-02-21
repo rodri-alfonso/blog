@@ -1,7 +1,7 @@
 import { HEADER_LINKS } from "../config.ts";
 import { JSX } from "preact";
 import Body from "../theme/typography/Body.tsx";
-import ThemeSwitcher from "../islands/ThemeSwitcher.tsx";
+import ModeSwitcher from "../islands/ModeSwitcher.tsx";
 import Avatar from "../icons/Avatar.tsx";
 import { css } from "twind/css";
 
@@ -41,7 +41,7 @@ export default function Header({ currentPath }: { currentPath: string }) {
           />
         ))}
       </nav>
-      <ThemeSwitcher />
+      <ModeSwitcher />
     </header>
   );
 }
