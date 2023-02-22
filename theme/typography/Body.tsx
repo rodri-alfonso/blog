@@ -8,10 +8,11 @@ export default function Body(props: ITypographyProps) {
   };
 
   const COLORS_STYLE_MAP = {
-    contrast: "text-white",
-    grey: "text-gray-500",
+    contrast: "text-white dark:text-black",
+    grey: "text-gray-200 dark:text-gray-800",
     primary: "text-blue-500",
-    default: "text-current",
+    default: "text-black dark:text-white",
+    current: "text-current",
   };
 
   const className = VARIANT_STYLE_MAP[props.variant || "normal"] + " " +

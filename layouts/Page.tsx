@@ -6,6 +6,7 @@ export interface IPageProps {
   title: string;
   children?: JSX.Element | JSX.Element[];
   path?: string;
+  class?: string;
 }
 
 export default function Page(props: IPageProps) {
@@ -17,7 +18,9 @@ export default function Page(props: IPageProps) {
       <div class="max-w-screen-lg mx-auto">
         {props.path && <Header currentPath={props.path} />}
 
-        <div class="dark:bg-black transition-all bg-white col-span-6 rounded-2xl p-6">
+        <div
+          class={`dark:bg-black transition-all bg-white col-span-6 rounded-2xl p-6 ${props.class}`}
+        >
           {props.children}
         </div>
       </div>

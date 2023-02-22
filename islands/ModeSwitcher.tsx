@@ -8,7 +8,7 @@ export default function ModeSwitcher() {
   return (
     <button
       onClick={changeMode}
-      class="active:scale-95 transition-all p-1 hover:bg-gray-100 focus:border-gray-400 text-gray-400 rounded-md hover:text-gray-800 focus:outline-none  "
+      class="active:scale-95 transition-all p-1 hover:bg-gray-100 focus:border-gray-400 text-gray-400 rounded-md hover:text-gray-800 focus:outline-none dark:hover:bg-gray-800 dark:hover:text-gray-300 "
     >
       {isLight ? <Moon /> : <Sun />}
     </button>

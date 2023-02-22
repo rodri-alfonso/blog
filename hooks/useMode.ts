@@ -6,7 +6,7 @@ const LIGHT = 'light'
 const MODE_STORAGE_KEY = 'mode'
 
 export function useMode() {
-	const mode = useSignal('')
+	const mode = useSignal('light')
 
 	const isDarkMode = localStorage.mode === DARK
 	const isLight = mode.value === LIGHT

@@ -3,7 +3,7 @@ import { JSX } from "preact";
 import Body from "../theme/typography/Body.tsx";
 import ModeSwitcher from "../islands/ModeSwitcher.tsx";
 import Avatar from "../icons/Avatar.tsx";
-import { css } from "twind/css";
+import { apply, css } from "twind/css";
 
 interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
   title: string;
@@ -16,19 +16,21 @@ export default function Header({ currentPath }: { currentPath: string }) {
 
     return (
       <a
-        class={"py-1 px-2.5 rounded-lg text-gray-400 hover:text-gray-900 active:scale-95 transition-all " +
-          (props.isActive ? " text-gray-900 bg-gray-200 " : "")}
+        class={"py-1 px-2.5 rounded-lg text-gray-400 dark:text-gray-300 dark:hover:text-gray-400 hover:text-gray-900 active:scale-95 transition-all " +
+          (props.isActive
+            ? " text-gray-900 dark:text-gray-300 bg-gray-200 dark:bg-gray-600"
+            : "")}
         href={props.href}
         {...rest}
       >
-        <Body text={props.title} variant="medium" />
+        <Body text={props.title} color="current" variant="medium" />
       </a>
     );
   }
 
   return (
     <header
-      class={header_css}
+      class={className}
     >
       <Avatar size={32} background="bg-gray-100" />
       <nav class="flex gap-4">
@@ -55,6 +57,11 @@ const header_css = css({
   padding: "10px",
   background: "rgba(255, 255, 255, 0.77)",
   backdropFilter: "blur(7.9px)",
-  border: "1px solid rgba(255, 255, 255, 0.31)",
   zIndex: 1,
-}) as any;
+});
+
+const className = apply`
+${header_css}
+dark:bg-black
+dark:bg-opacity-30
+` as any;

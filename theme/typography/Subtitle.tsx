@@ -8,10 +8,11 @@ export default function Subtitle(props: ITypographyProps) {
   };
 
   const COLORS_MAP = {
-    contrast: "text-white",
-    grey: "text-gray-200",
+    contrast: "text-white dark:text-black",
+    grey: "text-gray-200 dark:text-gray-800",
     primary: "text-blue-500",
-    default: "text-black",
+    default: "text-black dark:text-white",
+    current: "text-current",
   };
 
   const className = VARIANT_STYLE_MAP[props.variant || "normal"] + " " +
