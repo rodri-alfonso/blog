@@ -1,6 +1,6 @@
 import { JSX } from "preact";
-import Subtitle from "../theme/typography/Subtitle.tsx";
-import Body from "../theme/typography/Body.tsx";
+import Subtitle from "@theme/typography/Subtitle.tsx";
+import Body from "@theme/typography/Body.tsx";
 
 interface ISectionProps {
   title: string;

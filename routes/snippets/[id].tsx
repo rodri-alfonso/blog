@@ -1,4 +1,4 @@
-import Page from "../../layouts/Page.tsx";
+import Page from "@layouts/Page.tsx";
 import { PageProps } from "$fresh/server.ts";
 
 export default function Snippet(props: PageProps) {

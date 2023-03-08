@@ -1,5 +1,5 @@
 import { JSX } from "preact";
-import Body from "../theme/typography/Body.tsx";
+import Body from "@theme/typography/Body.tsx";
 
 interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
   title: string;

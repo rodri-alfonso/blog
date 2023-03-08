@@ -1,5 +1,4 @@
 import type { ITypographyProps } from "../types.tsx";
-import { apply } from "twind/css";
 
 export default function Body(props: ITypographyProps) {
   const VARIANT_STYLE_MAP = {

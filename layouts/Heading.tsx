@@ -1,5 +1,5 @@
-import Subtitle from "../theme/typography/Subtitle.tsx";
-import Body from "../theme/typography/Body.tsx";
+import Subtitle from "@theme/typography/Subtitle.tsx";
+import Body from "@theme/typography/Body.tsx";
 import { JSX } from "preact";
 
 interface HeadingProps extends JSX.HTMLAttributes<HTMLElement> {

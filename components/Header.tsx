@@ -1,8 +1,8 @@
-import { HEADER_LINKS } from "../config.ts";
 import { JSX } from "preact";
-import Body from "../theme/typography/Body.tsx";
+import Body from "@theme/typography/Body.tsx";
 import Avatar from "../icons/Avatar.tsx";
 import { apply, css } from "twind/css";
+import { HEADER_LINKS } from "@config/configuration.ts";
 
 interface LinkProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
   title: string;

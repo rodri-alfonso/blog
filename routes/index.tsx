@@ -5,7 +5,7 @@ import Page from "../layouts/Page.tsx";
 import type { PartialPost } from "../utils/types.ts";
 import TopArticles from "../components/TopArticles/index.tsx";
 import TopNotes from "../components/TopNotes/index.tsx";
-import Hero from "../components/Hero.tsx";
+import Hero from "@components/Hero.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {

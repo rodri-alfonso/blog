@@ -3,8 +3,8 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { listPosts } from "../../utils/posts.ts";
 import { PartialPost } from "../../utils/types.ts";
 import Body from "../../theme/typography/Body.tsx";
-import Subtitle from "../../theme/typography/Subtitle.tsx";
-import Heading from "../../layouts/Heading.tsx";
+import Subtitle from "@theme/typography/Subtitle.tsx";
+import Heading from "@layouts/Heading.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {

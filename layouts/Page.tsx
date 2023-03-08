@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { JSX } from "preact";
-import Header from "../components/Header.tsx";
+import Header from "@components/Header.tsx";
 
 export interface IPageProps {
   title: string;

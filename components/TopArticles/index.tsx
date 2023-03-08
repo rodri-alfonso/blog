@@ -1,6 +1,6 @@
-import Section from "../../layouts/Section.tsx";
-import Article from "./Article.tsx";
-import { PartialPost } from "../../utils/types.ts";
+import Section from "@layouts/Section.tsx";
+import Article from "@components/TopArticles/Article.tsx";
+import { PartialPost } from "@utils/types.ts";
 
 export default function TopArticles(props: { articles: PartialPost[] }) {
   return (

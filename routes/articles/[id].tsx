@@ -1,10 +1,10 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import ArticlePage from "../../layouts/Article.tsx";
+import ArticlePage from "@layouts/Article.tsx";
 import { asset } from "$fresh/runtime.ts";
-import Banner from "../../layouts/articles/Banner.tsx";
-import { loadPost } from "../../utils/posts.ts";
+import Banner from "@layouts/articles/Banner.tsx";
+import { loadPost } from "@utils/posts.ts";
 import { CSS } from "$deno-gfm";
-import Headline from "../../theme/typography/Headline.tsx";
+import Headline from "@theme/typography/Headline.tsx";
 
 export const handler: Handlers = {
   async GET(req, ctx) {

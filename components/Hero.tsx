@@ -1,6 +1,6 @@
-import Subtitle from "../theme/typography/Subtitle.tsx";
+import Subtitle from "@theme/typography/Subtitle.tsx";
 import { asset } from "$fresh/runtime.ts";
-import Body from "../theme/typography/Body.tsx";
+import Body from "@theme/typography/Body.tsx";
 
 export default function Hero() {
   return (

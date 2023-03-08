@@ -1,6 +1,6 @@
 import Moon from "../icons/Moon.tsx";
 import Sun from "../icons/Sun.tsx";
-import { useMode } from "../hooks/useMode.ts";
+import { useMode } from "@hooks/useMode.ts";
 
 export default function ModeSwitcher() {
   const { isLight, changeMode } = useMode();

@@ -1,5 +1,5 @@
-import Date from "../Date.tsx";
-import Body from "../../theme/typography/Body.tsx";
+import Date from "@components/Date.tsx";
+import Body from "@theme/typography/Body.tsx";
 
 interface ITopArticle {
   title: string;

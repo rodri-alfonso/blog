@@ -1,9 +1,9 @@
-import Headline from "../../theme/typography/Headline.tsx";
-import Subtitle from "../../theme/typography/Subtitle.tsx";
-import Body from "../../theme/typography/Body.tsx";
-import Caption from "../../theme/typography/Caption.tsx";
-import Overline from "../../theme/typography/Overline.tsx";
-import Page from "../../layouts/Page.tsx";
+import Headline from "@theme/typography/Headline.tsx";
+import Subtitle from "@theme/typography/Subtitle.tsx";
+import Body from "@theme/typography/Body.tsx";
+import Caption from "@theme/typography/Caption.tsx";
+import Overline from "@theme/typography/Overline.tsx";
+import Page from "@layouts/Page.tsx";
 
 export default function TypographyPage() {
   return (

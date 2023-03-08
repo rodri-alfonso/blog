@@ -1,5 +1,5 @@
 import Link from "./Link.tsx";
-import { HEADER_LINKS } from "../config.ts";
+import { HEADER_LINKS } from "@config/configuration.ts";
 
 export default function Header({ currentPath }: { currentPath: string }) {
   return (
