@@ -4,7 +4,7 @@ import { listPosts } from "../../utils/posts.ts";
 import { PartialPost } from "../../utils/types.ts";
 import Body from "../../theme/typography/Body.tsx";
 import Subtitle from "../../theme/typography/Subtitle.tsx";
-import Header from "../../components/Header.tsx";
+import Heading from "../../layouts/Heading.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {
@@ -32,13 +32,11 @@ export default function Articles(props: PageProps) {
     <Page
       title="Artciles page"
       path={props.url.pathname}
-      class="text-gray-800 dark:text-gray-200 bg-white dark:bg-black"
+      class="text-gray-800 dark:text-gray-200 bg-white dark:bg-black grid gap-4"
     >
-      <Subtitle text="What I've Written" variant="bold" class="pt-6" />
-      <Body
-        text={`${posts.length} Articles about UI architecture, design systems, CSS and frontend topics like web performance`}
-        variant="medium"
-        class="pt-2"
+      <Heading
+        title="What I've Written"
+        description={`${posts.length} Articles about UI architecture, design systems, CSS and frontend topics like web performance`}
       />
       <section class="pt-8 grid gap-2">
         {posts.map((article: PartialPost) => <Article article={article} />)}

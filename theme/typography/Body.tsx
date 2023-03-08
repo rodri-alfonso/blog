@@ -1,4 +1,5 @@
 import type { ITypographyProps } from "../types.tsx";
+import { apply } from "twind/css";
 
 export default function Body(props: ITypographyProps) {
   const VARIANT_STYLE_MAP = {
@@ -11,18 +12,14 @@ export default function Body(props: ITypographyProps) {
     contrast: "text-white dark:text-black",
     grey: "text-gray-200 dark:text-gray-800",
     primary: "text-blue-500",
-    default: "text-black dark:text-white",
+    default: "text-black dark:text-gray-50",
     current: "text-current",
   };
 
-  const className = VARIANT_STYLE_MAP[props.variant || "normal"] + " " +
-    COLORS_STYLE_MAP[props.color || "default"] + " " + props.class;
+  const variantStyles = VARIANT_STYLE_MAP[props.variant || "normal"];
+  const colorStyles = COLORS_STYLE_MAP[props.color || "default"];
 
-  return (
-    <p
-      class={className}
-    >
-      {props.text}
-    </p>
-  );
+  const className = [variantStyles, colorStyles, props.class].join(" ");
+
+  return <p class={className}>{props.text}</p>;
 }

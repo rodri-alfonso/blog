@@ -1,4 +1,4 @@
-import type { ITypographyProps } from "../types.tsx";
+import type { ITypographyProps } from "@theme/types.tsx";
 
 export default function Subtitle(props: ITypographyProps) {
   const VARIANT_STYLE_MAP = {
@@ -11,7 +11,7 @@ export default function Subtitle(props: ITypographyProps) {
     contrast: "text-white dark:text-black",
     grey: "text-gray-200 dark:text-gray-800",
     primary: "text-blue-500",
-    default: "text-black dark:text-white",
+    default: "text-black dark:text-gray-50",
     current: "text-current",
   };
 

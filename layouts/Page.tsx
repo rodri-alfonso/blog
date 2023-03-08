@@ -19,7 +19,7 @@ export default function Page(props: IPageProps) {
         {props.path && <Header currentPath={props.path} />}
 
         <div
-          class={`dark:bg-black transition-all bg-white col-span-6 rounded-2xl p-6 ${props.class}`}
+          class={`dark:bg-gray-900 transition-all bg-white col-span-6 rounded-2xl p-6 ${props.class}`}
         >
           {props.children}
         </div>

@@ -6,8 +6,8 @@ interface IArticleProps {
 
 export default function Article(props: IArticleProps) {
   return (
-    <article class="p-8">
+    <main class="p-8 bg-gray-900 w-screen">
       {props.children}
-    </article>
+    </main>
   );
 }

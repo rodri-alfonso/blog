@@ -1,5 +1,5 @@
 import { assertEquals } from '$std-testing/asserts.ts'
-import { loadPost } from './posts.ts'
+import { loadPost } from '@utils/posts.ts'
 
 Deno.test('loadPost() returns null if the post does not exist', async () => {
 	const post = await loadPost('non-exist')

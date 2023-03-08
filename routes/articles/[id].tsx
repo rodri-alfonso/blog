@@ -1,8 +1,10 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import ArticlePage from "../../layouts/Article.tsx";
-
+import { asset } from "$fresh/runtime.ts";
+import Banner from "../../layouts/articles/Banner.tsx";
 import { loadPost } from "../../utils/posts.ts";
 import { CSS } from "$deno-gfm";
+import Headline from "../../theme/typography/Headline.tsx";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
@@ -16,16 +18,26 @@ export const handler: Handlers = {
 export default function Article(props: PageProps) {
   const { post } = props.data || {};
 
+  const classArticle = "markdown-body bg-gray-900!";
+
   return (
     <ArticlePage>
-      <h1>This is the article {props.params.id}</h1>
+      <article class="max-w-screen-md mx-auto">
+        <div class="pb-20 grid gap-16">
+          <a href="/articles">Back</a>
 
-      <article>
-        <h1>{post.title}</h1>
-        <span>{Intl.DateTimeFormat("es").format(post.date)}</span>
+          <Banner title={`This is the article: ${props.params.id}`} />
+        </div>
+
+        {
+          /* <h1>{post.title}</h1>
+        <span>{Intl.DateTimeFormat("es").format(post.date)}</span> */
+        }
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
         <div
-          class="markdown-body"
+          class={classArticle}
+          data-color-mode="dark"
+          data-dark-theme="dark"
           dangerouslySetInnerHTML={{ __html: post.body }}
         >
           {post.body}
