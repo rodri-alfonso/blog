@@ -1,11 +1,9 @@
 ---
-title: Hello word
+title: Why you should use themes in application
 date: 2022-12-12
 excerpt: This is a description
 hightlight: false
 ---
-
-Hello Word! This is my first post
 
 ## This is a heading :)
 

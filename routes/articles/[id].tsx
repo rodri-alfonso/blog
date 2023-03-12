@@ -4,7 +4,6 @@ import { asset } from "$fresh/runtime.ts";
 import Banner from "@layouts/articles/Banner.tsx";
 import { loadPost } from "@utils/posts.ts";
 import { CSS } from "$deno-gfm";
-import Headline from "@theme/typography/Headline.tsx";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
@@ -26,7 +25,7 @@ export default function Article(props: PageProps) {
         <div class="pb-20 grid gap-16">
           <a href="/articles">Back</a>
 
-          <Banner title={`This is the article: ${props.params.id}`} />
+          <Banner title={post.title} />
         </div>
 
         {

@@ -1,9 +1,8 @@
-import Page from "../../layouts/Page.tsx";
+import Page from "@layouts/Page.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { listPosts } from "../../utils/posts.ts";
-import { PartialPost } from "../../utils/types.ts";
-import Body from "../../theme/typography/Body.tsx";
-import Subtitle from "@theme/typography/Subtitle.tsx";
+import { listPosts } from "@utils/posts.ts";
+import { PartialPost } from "@utils/types.ts";
+import Body from "@theme/typography/Body.tsx";
 import Heading from "@layouts/Heading.tsx";
 
 export const handler: Handlers = {
