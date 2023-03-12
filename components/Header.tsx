@@ -15,7 +15,7 @@ export default function Header({ currentPath }: { currentPath: string }) {
 
     return (
       <a
-        class={"lowercase py-1.5 px-3 rounded-md text-gray-400 dark:text-gray-300 dark:hover:text-white hover:text-gray-900 active:scale-95 transition-all " +
+        class={"capitalize py-1.5 px-3 rounded-lg text-gray-400 dark:text-gray-300 dark:hover:text-white hover:text-gray-900 active:scale-95 transition-all " +
           (props.isActive
             ? " text-gray-900 dark:text-gray-50 bg-gray-200 dark:bg-gray-600"
             : "")}
