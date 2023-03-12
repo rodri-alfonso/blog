@@ -1,6 +1,5 @@
 import { JSX } from "preact";
 import Body from "@theme/typography/Body.tsx";
-import Avatar from "../icons/Avatar.tsx";
 import { apply, css } from "twind/css";
 import { HEADER_LINKS } from "@config/configuration.ts";
 
@@ -31,8 +30,7 @@ export default function Header({ currentPath }: { currentPath: string }) {
     <header
       class={className}
     >
-      <Avatar size={32} background="bg-gray-100" />
-      <nav class="flex gap-4">
+      <nav class="flex gap-2 w-max-screen sm:gap-4">
         {HEADER_LINKS.map((link) => (
           <Link
             key={link.title}
