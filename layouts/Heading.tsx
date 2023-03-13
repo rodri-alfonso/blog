@@ -9,7 +9,7 @@ interface HeadingProps extends JSX.HTMLAttributes<HTMLElement> {
 
 export default function Heading(props: HeadingProps) {
   return (
-    <section class="grid gap-2">
+    <section class={`grid gap-2 ${props.class}`}>
       <Subtitle text={props.title} variant="bold" />
       {props.description &&
         (

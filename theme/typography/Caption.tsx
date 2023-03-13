@@ -6,7 +6,9 @@ export default function Caption(props: ITypographyProps) {
     medium: "text-sm font-medium",
     bold: "text-sm font-bold",
   };
-  return (
-    <p class={VARIANT_STYLE_MAP[props.variant || "normal"]}>{props.text}</p>
-  );
+
+  const className = [VARIANT_STYLE_MAP[props.variant || "normal"], props.class]
+    .join(" ");
+
+  return <p class={className}>{props.text}</p>;
 }

@@ -4,6 +4,8 @@ import { listPosts } from "@utils/posts.ts";
 import { PartialPost } from "@utils/types.ts";
 import Body from "@theme/typography/Body.tsx";
 import Heading from "@layouts/Heading.tsx";
+import { simplifyDate } from "@utils/date.ts";
+import Caption from "@theme/typography/Caption.tsx";
 
 export const handler: Handlers = {
   async GET(_, ctx) {
@@ -15,17 +17,21 @@ export const handler: Handlers = {
 export default function Articles(props: PageProps) {
   const { posts } = props.data;
 
-  function Article(props: { article: PartialPost }) {
+  const Article = (props: { article: PartialPost }) => {
     return (
       <a
-        class="text-gray-900 bg-gray-100 py-2 px-4  rounded-md font-bold flex justify-between hover:bg-gray-200 active:bg-gray-100 transition-all dark:bg-gray-700 dark:hover:bg-gray-800 dark:text-gray-200"
+        class="py-3 px-4 rounded-md flex justify-between dark:hover:bg-gray-800 dark:text-gray-200  dark:hover:text-gray-50 hover:scale-105 active:scale-100 transition-all"
         href={`/articles/${props.article.id}`}
       >
-        <Body text={props.article.title} />
-        <Body text={props.article.date.toDateString()} />
+        <Body text={props.article.title} color="current" variant="medium" />
+        <Caption
+          class="capitalize text-current"
+          text={simplifyDate(props.article.date)}
+          variant="medium"
+        />
       </a>
     );
-  }
+  };
 
   return (
     <Page
@@ -34,8 +40,9 @@ export default function Articles(props: PageProps) {
       class="text-gray-800 dark:text-gray-200 bg-white dark:bg-black grid gap-4"
     >
       <Heading
-        title="What I've Written"
-        description={`${posts.length} Articles about UI architecture, design systems, CSS and frontend topics like web performance`}
+        title="All articles"
+        class="px-4"
+        description={`${posts.length} Articles about UI architecture, design systems, and advanced CSS`}
       />
       <section class="pt-8 grid gap-2">
         {posts.map((article: PartialPost) => <Article article={article} />)}
