@@ -1,12 +1,13 @@
-import { getPost, getPartialPosts } from '@/utils'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import Page from '@/components/layouts/Page'
+import { getPartialPosts } from '@/utils'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ posts }: any) {
 	return (
-		<main>
+		<Page title='' description=''>
 			<ul>
 				<li>
 					{posts.map((post, index) => (
@@ -16,7 +17,7 @@ export default function Home({ posts }: any) {
 					))}
 				</li>
 			</ul>
-		</main>
+		</Page>
 	)
 }
 

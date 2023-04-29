@@ -2,13 +2,14 @@ import { HEADER_LINKS } from '@/config'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import ThemeSwitcher from './ThemeSwitcher'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
 	const { pathname } = useRouter()
 	const isInPath = (path: string) => pathname === path
 
 	return (
-		<header className='flex justify-between gap-4 sticky top-0 z-10 py-4 bg-white bg-opacity-60 backdrop-blur-md  '>
+		<header className='flex justify-between items-center gap-4 sticky top-0 z-10 py-4 bg-white bg-opacity-60 backdrop-blur-md  '>
 			<img src='/avatar.svg' alt='icon' className='w-10 h-10' />
 
 			<nav className=' flex gap-4'>
@@ -24,7 +25,11 @@ export default function Header() {
 					</Link>
 				))}
 			</nav>
-			<ThemeSwitcher />
+
+			<div className='flex gap-1'>
+				<ThemeSwitcher />
+				<LanguageSwitcher />
+			</div>
 		</header>
 	)
 }

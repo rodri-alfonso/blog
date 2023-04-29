@@ -14,7 +14,7 @@ function Post({ data, content }) {
 
 export default Post
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = () => {
 	const posts = getPartialPosts()
 	const paths = posts.map((post) => ({ params: { slug: post.slug } }))
 	return {
