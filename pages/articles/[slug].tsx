@@ -1,21 +1,20 @@
-import { getPartialPosts, getPost } from '@/utils'
+import { getPartialContent, getContent } from '@/utils/content'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import { Content } from '@/types'
 
-function Post({ data, content }) {
+export default function Articles({ content, date, title }: Content) {
 	return (
 		<div>
-			<h1>{data.title}</h1>
-			<time>{data.date}</time>
+			<h1>{title}</h1>
+			<time>{date}</time>
 			<MDXRemote {...content} />
 		</div>
 	)
 }
 
-export default Post
-
 export const getStaticPaths = () => {
-	const posts = getPartialPosts()
+	const posts = getPartialContent()
 	const paths = posts.map((post) => ({ params: { slug: post.slug } }))
 	return {
 		paths,
@@ -23,12 +22,12 @@ export const getStaticPaths = () => {
 	}
 }
 
-export const getStaticProps = async ({ params }) => {
-	const post = getPost(params.slug)
+export const getStaticProps = async ({ params }: any) => {
+	const post = getContent(params.slug)
 	const mdxSource = await serialize(post.content)
 	return {
 		props: {
-			data: post.data,
+			...post,
 			content: mdxSource,
 		},
 	}
