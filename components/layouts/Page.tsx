@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '@/components/Header'
+import Footer from '../Footer'
 
 interface PageProps {
 	title: string
@@ -9,10 +10,10 @@ interface PageProps {
 
 export default function Page({ title, description, children }: PageProps) {
 	return (
-		<div className='max-w-screen-lg mx-auto pt-4'>
+		<div className='max-w-screen-lg mx-auto grid gap-4'>
 			<Header />
-			<main className='pt-10'>{children}</main>
-			<footer>heyyy</footer>
+			<main className='pt-10 '>{children}</main>
+			<Footer />
 		</div>
 	)
 }
