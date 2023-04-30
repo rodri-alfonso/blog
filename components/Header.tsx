@@ -17,8 +17,8 @@ export default function Header() {
 					<Link
 						key={link.name + index}
 						href={link.path}
-						className={`px-3 py-2 text-gray-800 capitalize font-medium rounded-lg hover:bg-gray-100 transition-all active:scale-95 ${
-							isInPath(link.path) ? 'bg-gray-100' : ''
+						className={`px-3 py-2 capitalize font-medium rounded-lg hover:bg-gray-100 transition-all active:scale-95 ${
+							isInPath(link.path) ? 'bg-gray-100 text-gray-800' : 'text-gray-500'
 						}`}
 					>
 						{link.name}
@@ -27,8 +27,8 @@ export default function Header() {
 			</nav>
 
 			<div className='flex gap-1'>
-				<ThemeSwitcher />
 				<LanguageSwitcher />
+				<ThemeSwitcher />
 			</div>
 		</header>
 	)

@@ -1,28 +1,26 @@
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import Page from '@/components/layouts/Page'
-import { getPartialPosts } from '@/utils'
+import { getPartialContent } from '@/utils/content'
+import TopArticles from '@/components/TopArticles'
+import Banner from '@/components/Banner'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ posts }: any) {
 	return (
 		<Page title='' description=''>
-			<ul>
-				<li>
-					{posts.map((post, index) => (
-						<Link key={index} href={`/articles/${post.slug}`}>
-							<h6>{post.data.title}</h6>
-						</Link>
-					))}
-				</li>
-			</ul>
+			<Banner title='Welcome' description='this is a description' />
+
+			<div className='pt-20'>
+				<TopArticles articles={posts} />
+			</div>
 		</Page>
 	)
 }
 
 export const getStaticProps = () => {
-	const posts = getPartialPosts()
+	const posts = getPartialContent()
 
 	return {
 		props: {
