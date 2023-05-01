@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { PartialContent, Content } from '@/types'
 
+//agregar objeto de configuracion para que reciba cualquier tipo de contenido, no solo articles.
 export const getContent = (slug: string): Content => {
 	const fileContents = fs.readFileSync(path.join(`content/articles/${slug}.mdx`), 'utf8')
 	const { data, content } = matter(fileContents)

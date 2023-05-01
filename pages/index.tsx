@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ posts }: any) {
 	return (
-		<Page title='' description=''>
+		<Page title='' description='' footer>
 			<Banner title='Welcome' description='this is a description' />
 
 			<div className='pt-20'>
