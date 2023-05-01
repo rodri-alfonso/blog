@@ -1,4 +1,4 @@
-import Page from '@/components/layouts/Page'
+import Page from '@/layouts/Page'
 import { getPartialContent } from '@/utils/content'
 import { PartialContent } from '../../types'
 import Link from 'next/link'

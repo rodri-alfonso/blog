@@ -1,9 +1,9 @@
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
-import Page from '@/components/layouts/Page'
-import { getPartialContent } from '@/utils/content'
-import TopArticles from '@/components/TopArticles'
-import Banner from '@/components/Banner'
+import Page from '@layouts/Page'
+import { getPartialContent } from '@utils/content'
+import TopArticles from '@components/TopArticles'
+import Banner from '@components/Banner'
 
 const inter = Inter({ subsets: ['latin'] })
 
