@@ -17,7 +17,7 @@
 		"paths": {
 			"@components/*": ["./components/*"],
 			"@layouts/*": ["./layouts/*"],
-			"@utils/*": ["./utils/*"],
+			"@utils/*": ["utils/*"],
 			"@content/*": ["./content/*"],
 			"@assets/*": ["./assets/*"],
 			"@types/*": ["./types/*"]

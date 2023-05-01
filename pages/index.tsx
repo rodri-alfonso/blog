@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
-import Link from 'next/link'
 import Page from '@layouts/Page'
-import { getPartialContent } from '@utils/content'
+import { getPartialContent } from '../utils/content'
 import TopArticles from '@components/TopArticles'
 import Banner from '@components/Banner'
 

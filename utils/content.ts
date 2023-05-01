@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { PartialContent, Content } from '@/types'
+import { PartialContent, Content } from '@content/types'
 
 //agregar objeto de configuracion para que reciba cualquier tipo de contenido, no solo articles.
 export const getContent = (slug: string): Content => {

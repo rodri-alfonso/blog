@@ -1,6 +1,6 @@
-import Page from '@/layouts/Page'
-import { getPartialContent } from '@/utils/content'
-import { PartialContent } from '../../types'
+import Page from '@layouts/Page'
+import { getPartialContent } from '../../utils/content'
+import { PartialContent } from '@content/types'
 import Link from 'next/link'
 
 interface Props {

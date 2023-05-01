@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Content } from '@/types'
+import { Content } from '@content/types'
 import Article from './Article'
 
 interface Props {

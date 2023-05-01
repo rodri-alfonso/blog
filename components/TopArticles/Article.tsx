@@ -1,4 +1,4 @@
-interface ITopArticle {
+interface Props {
 	title: string
 	description: string
 	date: string
@@ -6,7 +6,7 @@ interface ITopArticle {
 	illustration: string
 }
 
-export default function Article(props: ITopArticle) {
+export default function Article(props: Props) {
 	return (
 		<a
 			href={props.href}

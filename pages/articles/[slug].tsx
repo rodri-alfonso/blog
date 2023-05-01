@@ -1,7 +1,7 @@
-import { getPartialContent, getContent } from '@/utils/content'
+import { getPartialContent, getContent } from '../../utils/content'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { Content } from '@/types'
+import { Content } from '@content/types'
 
 export default function Articles({ content, date, title }: Content) {
 	return (

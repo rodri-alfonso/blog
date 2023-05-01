@@ -2,14 +2,14 @@ import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 
-interface PageProps {
+interface Props {
 	title: string
 	description: string
 	children: JSX.Element | JSX.Element[]
 	footer?: boolean
 }
 
-export default function Page({ title, description, children, footer }: PageProps) {
+export default function Page({ title, description, children, footer }: Props) {
 	return (
 		<div className='max-w-screen-lg mx-auto grid gap-4'>
 			<Header />

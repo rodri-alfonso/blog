@@ -1,4 +1,4 @@
-import { HEADER_LINKS } from '@/config'
+import { HEADER_LINKS } from '@utils/config'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import ThemeSwitcher from './ThemeSwitcher'
