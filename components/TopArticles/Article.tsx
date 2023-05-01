@@ -14,9 +14,9 @@ export default function Article(props: ITopArticle) {
 		>
 			<div className='w-full h-48 object-contain border-1 border-gray-50 shadow-lg rounded-lg overflow-hidden relative'>
 				<img
-					src={props.illustration}
+					src={`/illustrations/${props.illustration}.png`}
 					alt=''
-					className='h-64 m-auto absolute -top-8 left-0 right-0 object-cover hover:scale-125 hover:-rotate-12 transition-all'
+					className='object-contain w-full h-full  hover:scale-125 hover:-rotate-12 transition-all'
 				/>
 			</div>
 

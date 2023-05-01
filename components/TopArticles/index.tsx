@@ -22,8 +22,12 @@ export default function TopArticles({ articles }: Props) {
 					/>
 				))}
 			</div>
-			<Link href='/articles' className='font-medium '>
-				View all articles
+			<Link
+				href='/articles'
+				className='font-medium flex gap-1 hover:gap-2 hover:underline items-center transition-all lowercase w-40 py-2 active:scale-95'
+			>
+				<p>View all articles</p>
+				<img src='/icons/arrow-narrow.svg' alt='' className='w-6 h-6 rotate-180 ' />
 			</Link>
 		</section>
 	)

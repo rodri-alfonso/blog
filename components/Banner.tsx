@@ -6,9 +6,11 @@ interface Props {
 
 export default function Banner({ title, description, illustration }: Props) {
 	return (
-		<section className='flex gap-2 bg-black h-36 rounded-2xl '>
-			<img src={illustration} alt='illustration' />
-			<div className='text-white grid gap-2'>
+		<section className='bg-gray-900 w-full rounded-2xl h-36 flex items-center gap-10 px-4'>
+			<div className='w-36 h-full relative'>
+				<img src='/avatar-torso.svg' className='absolute bottom-0 left-1' alt='' />
+			</div>
+			<div className='flex flex-col gap-1 text-white'>
 				<h2>{title}</h2>
 				<p>{description}</p>
 			</div>
