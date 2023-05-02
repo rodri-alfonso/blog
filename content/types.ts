@@ -14,3 +14,11 @@ export interface Content extends PartialContent {
 }
 
 export type ContentType = 'articles' | 'notes' | 'snippets'
+
+export interface Config extends PartialConfig {
+	slug: string
+}
+
+export interface PartialConfig {
+	type: ContentType
+}
