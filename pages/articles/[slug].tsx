@@ -14,7 +14,7 @@ export default function Articles({ content, date, title }: Content) {
 }
 
 export const getStaticPaths = () => {
-	const posts = getPartialContent()
+	const posts = getPartialContent('articles')
 	const paths = posts.map((post) => ({ params: { slug: post.slug } }))
 	return {
 		paths,
@@ -23,7 +23,7 @@ export const getStaticPaths = () => {
 }
 
 export const getStaticProps = async ({ params }: any) => {
-	const post = getContent(params.slug)
+	const post = getContent({ type: 'articles', slug: params.slug })
 	const mdxSource = await serialize(post.content)
 	return {
 		props: {
