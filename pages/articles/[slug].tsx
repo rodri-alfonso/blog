@@ -14,7 +14,7 @@ export default function Articles({ content, date, title }: Content) {
 }
 
 export const getStaticPaths = () => {
-	const posts = getPartialContent('articles')
+	const posts = getPartialContent({ type: 'articles' })
 	const paths = posts.map((post) => ({ params: { slug: post.slug } }))
 	return {
 		paths,

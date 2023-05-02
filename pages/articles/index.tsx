@@ -46,7 +46,7 @@ export default function Articles({ posts }: Props) {
 }
 
 export const getStaticProps = () => {
-	const posts = getPartialContent('articles')
+	const posts = getPartialContent({ type: 'articles' })
 
 	return {
 		props: {
