@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from '@components/Header'
-import Footer from '@components/Footer'
 
 interface Props {
 	title: string
@@ -14,7 +13,6 @@ export default function Page({ title, description, children, footer }: Props) {
 		<div className='max-w-screen-lg mx-auto grid gap-4'>
 			<Header />
 			<main className='pt-10'>{children}</main>
-			{footer && <Footer />}
 		</div>
 	)
 }
