@@ -1,8 +1,6 @@
 import { HEADER_LINKS } from '@utils/config'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import ThemeSwitcher from './ThemeSwitcher'
-import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
 	const { pathname } = useRouter()
@@ -26,10 +24,7 @@ export default function Header() {
 				))}
 			</nav>
 
-			<div className='flex gap-1'>
-				<LanguageSwitcher />
-				<ThemeSwitcher />
-			</div>
+			<div className='flex gap-1'></div>
 		</header>
 	)
 }
