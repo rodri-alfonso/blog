@@ -9,7 +9,7 @@ interface Props {
 export default function TopArticles({ articles }: Props) {
 	return (
 		<section className='grid gap-8'>
-			<h2>Recommended articles</h2>
+			{/* <h2 className=' text-2xl font-medium'>Recommended articles</h2> */}
 			<div className='grid grid-cols-3 gap-x-8 gap-y-14 pt-2'>
 				{articles.map((article) => (
 					<Article

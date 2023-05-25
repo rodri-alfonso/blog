@@ -11,8 +11,8 @@ export default function Banner({ title, description, illustration }: Props) {
 				<img src='/avatar-torso.svg' className='absolute bottom-0 left-1' alt='' />
 			</div>
 			<div className='flex flex-col gap-1 text-white'>
-				<h2>{title}</h2>
-				<p>{description}</p>
+				<h2 className='text-3xl font-bold'>{title}</h2>
+				<p className='text-gray-200 '>{description}</p>
 			</div>
 		</section>
 	)

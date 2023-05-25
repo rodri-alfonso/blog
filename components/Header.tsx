@@ -7,7 +7,7 @@ export default function Header() {
 	const isInPath = (path: string) => pathname === path
 
 	return (
-		<header className='flex justify-between items-center gap-4 sticky top-0 z-10 py-4 bg-white bg-opacity-60 backdrop-blur-md  '>
+		<header className='flex justify-between items-center gap-4 py-4 bg-white bg-opacity-60 backdrop-blur-md  '>
 			<img src='/avatar.svg' alt='icon' className='w-10 h-10' />
 
 			<nav className=' flex gap-4'>
@@ -15,8 +15,8 @@ export default function Header() {
 					<Link
 						key={link.name + index}
 						href={link.path}
-						className={`px-3 py-2 capitalize font-medium rounded-lg hover:bg-gray-100 transition-all active:scale-95 ${
-							isInPath(link.path) ? 'bg-gray-100 text-gray-800' : 'text-gray-500'
+						className={`px-3 py-2 capitalize font-medium rounded-lg hover:text-black transition-all active:scale-95 ${
+							isInPath(link.path) ? 'bg-gray-100 text-gray-900' : 'text-gray-500'
 						}`}
 					>
 						{link.name}

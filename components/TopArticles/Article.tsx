@@ -21,10 +21,10 @@ export default function Article(props: Props) {
 			</div>
 
 			<div className='grid gap-1'>
-				<p>{props.title}</p>
+				<p className='font-semibold first-letter:uppercase text-lg'>{props.title}</p>
 				<div className='flex items-center gap-2.5'>
 					<span className='text-sm text-gray-500 flex items-center gap-1'>
-						<p>{props.date}</p>
+						<p className=''>{props.date}</p>
 					</span>
 					<span className='text-sm text-gray-500 flex items-center gap-1'>
 						<img src={'/icons/clock.svg'} alt='' className='w-4 h-4 text-gray-500' />9 min
