@@ -6,7 +6,7 @@ import Banner from '@components/Banner'
 
 const inter = Playfair_Display({ subsets: ['latin'], weight: ['400', '500', '600'] })
 
-export default function Home({ posts }: any) {
+export default function Home({ artices }: any) {
 	return (
 		<Page title='' description='' footer>
 			<Banner
@@ -15,19 +15,18 @@ export default function Home({ posts }: any) {
 			/>
 
 			<div className='pt-12 grid gap-20'>
-				<TopArticles articles={posts} />
-				<TopArticles articles={posts} />
+				<TopArticles articles={artices} />
 			</div>
 		</Page>
 	)
 }
 
 export const getStaticProps = () => {
-	const posts = getPartialContent({ type: 'articles' })
+	const artices = getPartialContent({ type: 'articles' })
 
 	return {
 		props: {
-			posts,
+			artices,
 		},
 	}
 }

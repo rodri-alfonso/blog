@@ -1,10 +1,10 @@
 interface Props {
 	title: string
 	description: string
-	illustration?: string
+	illustration?: 'default' | 'glasses'
 }
 
-export default function Banner({ title, description, illustration }: Props) {
+export default function Banner({ title, description, illustration = 'default' }: Props) {
 	return (
 		<section className='bg-gray-900 w-full rounded-2xl h-36 flex items-center gap-10 px-4'>
 			<div className='w-36 h-full relative'>
@@ -12,7 +12,7 @@ export default function Banner({ title, description, illustration }: Props) {
 			</div>
 			<div className='flex flex-col gap-1 text-white'>
 				<h2 className='text-3xl font-bold'>{title}</h2>
-				<p className='text-gray-200 '>{description}</p>
+				<p className='text-gray-300 font-medium '>{description}</p>
 			</div>
 		</section>
 	)

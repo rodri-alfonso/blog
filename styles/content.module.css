@@ -1,0 +1,26 @@
+.content {
+	@apply text-gray-800;
+}
+
+.content > h2 {
+	@apply text-3xl font-semibold pb-6 pt-20;
+}
+.content > h3 {
+	@apply text-2xl font-semibold pb-4 pt-16;
+}
+.content > h4 {
+	@apply text-xl font-semibold pb-2 pt-14;
+}
+.content > h5 {
+	@apply text-lg font-semibold pt-12 pb-1;
+}
+.content > h6 {
+	@apply text-lg font-semibold pt-14 pb-10;
+}
+.content > p {
+	@apply text-lg font-normal text-gray-600;
+}
+
+.content > ul {
+	@apply list-disc pl-3 py-5 grid gap-1;
+}

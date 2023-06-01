@@ -2,6 +2,7 @@ import Page from '@layouts/Page'
 import { getPartialContent } from '../../utils/content'
 import { PartialContent } from '@content/types'
 import Link from 'next/link'
+import Banner from '@components/Banner'
 
 interface Props {
 	posts: PartialContent[]
@@ -31,11 +32,10 @@ export default function Articles({ posts }: Props) {
 
 	return (
 		<Page description='' title="Rodrigo's Blog | Articles">
-			<h2 className='pl-4 pb-2 font-bold text-3xl '>What I&#39;ve written</h2>
-			<h2
-				title='All articles'
-				className='pl-4'
-			>{`${posts.length} Articles about UI architecture, design systems, and advanced CSS`}</h2>
+			<Banner
+				title='What I&#39;ve written'
+				description={`${posts.length} Articles about UI architecture, design systems, and advanced CSS`}
+			/>
 			<section className='mt-8 grid text-gray-600 hover:text-gray-400'>
 				{posts.map((article: PartialContent) => (
 					<Article key={article.slug} article={article} />

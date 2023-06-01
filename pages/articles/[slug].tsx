@@ -5,30 +5,28 @@ import { Content } from '@content/types'
 import Page from '@layouts/Page'
 import Link from 'next/link'
 import IconOrchester from '@assets/icons'
+import styles from '@styles/content.module.css'
 
-export default function Article({ content, date, description, illustration, slug, title }: Content) {
+export default function Article({ content, date, description, title }: Content) {
 	const Banner = () => {
 		return (
-			<section className='grid gap-4 h-80 rounded-lg overflow-hidden'>
+			<section className='flex flex-col gap-32 rounded-lg overflow-hidden'>
 				<Link
 					href='/articles'
-					className='flex items-center gap-2 w-60 hover:underline text-gray-600 font-medium text-md active:scale-95 transition-all'
+					className='flex items-center gap-4 w-60 hover:underline text-gray-800 font-medium text-lg active:scale-95 transition-all'
 				>
 					<IconOrchester icon='arrow-narrow' size={32} />
 					Back to overview
 				</Link>
-				{/* <img
-					src={`/illustrations/${illustration}.png`}
-					alt=''
-					className='object-contain w-full h-52 border-1 border-gray-100 rounded-xl shadow-xl p-2'
-				/> */}
 				<div className='flex flex-col gap-2'>
 					<h1 className='font-semibold text-4xl first-letter:uppercase'>{title}</h1>
-					{/* <p className='first-letter:uppercase font-medium text-gray-600'>{description}</p> */}
-					<div className='flex items-center gap-2 text-gray-600 text-sm'>
-						<span>{date}</span>
+					<div className='flex items-center gap-4 text-gray-600 text-base'>
+						<span className='flex items-center gap-1'>
+							<IconOrchester icon='calendar' size={18} />
+							{date}
+						</span>
 						<span className='flex items-center gap-1 '>
-							<IconOrchester icon='clock' size={14} />
+							<IconOrchester icon='clock' size={18} />
 							15 min. read
 						</span>
 					</div>
@@ -38,10 +36,10 @@ export default function Article({ content, date, description, illustration, slug
 	}
 
 	return (
-		<Page title={title} description={description}>
-			<div className='max-w-screen-md m-auto'>
+		<Page title={title} description={description} hideHeader>
+			<div className='max-w-screen-md m-auto grid gap-20'>
 				<Banner />
-				<article>
+				<article className={styles.content}>
 					<MDXRemote {...content} />
 				</article>
 			</div>
