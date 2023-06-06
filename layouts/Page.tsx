@@ -11,9 +11,9 @@ interface Props {
 
 export default function Page({ title, description, children, footer, hideHeader }: Props) {
 	return (
-		<div className='max-w-screen-lg mx-auto grid gap-4 pb-32'>
+		<div className='max-w-screen-lg mx-auto grid gap-4 pb-32 px-14'>
 			{!hideHeader && <Header />}
-			<main className='pt-10'>{children}</main>
+			<main className='pt-10 grid gap-4'>{children}</main>
 		</div>
 	)
 }

@@ -22,5 +22,5 @@
 }
 
 .content > ul {
-	@apply list-disc pl-3 py-5 grid gap-1;
+	@apply list-disc pl-3 grid gap-1;
 }

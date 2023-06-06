@@ -3,6 +3,8 @@ export interface DataContent {
 	description: string
 	title: string
 	illustration: string
+	time: number
+	highlight: boolean
 }
 
 export interface PartialContent extends DataContent {

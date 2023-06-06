@@ -14,7 +14,7 @@ export default function Home({ artices }: any) {
 				description='I write about UI architecture, design systems, typographies, CSS, and web performance.'
 			/>
 
-			<div className='pt-12 grid gap-20'>
+			<div className='grid gap-20'>
 				<TopArticles articles={artices} />
 			</div>
 		</Page>

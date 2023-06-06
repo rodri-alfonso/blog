@@ -19,7 +19,7 @@ export default function Article({ content, date, description, title }: Content) 
 					Back to overview
 				</Link>
 				<div className='flex flex-col gap-2'>
-					<h1 className='font-semibold text-4xl first-letter:uppercase'>{title}</h1>
+					<h1 className='font-bold text-4xl first-letter:uppercase'>{title}</h1>
 					<div className='flex items-center gap-4 text-gray-600 text-base'>
 						<span className='flex items-center gap-1'>
 							<IconOrchester icon='calendar' size={18} />

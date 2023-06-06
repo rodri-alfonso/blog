@@ -1,9 +1,13 @@
+import ArticleDate from '@components/ArticleDate'
+
 interface Props {
 	title: string
 	description: string
 	date: string
 	href: string
 	illustration: string
+	time: number
+	hightlight: boolean
 }
 
 export default function Article(props: Props) {
@@ -19,15 +23,7 @@ export default function Article(props: Props) {
 
 			<div className='grid gap-1'>
 				<h3 className='font-semibold first-letter:uppercase text-lg'>{props.title}</h3>
-				<div className='flex items-center gap-2.5'>
-					<span className='text-sm text-gray-500 flex items-center gap-1'>
-						<p className=''>{props.date}</p>
-					</span>
-					<span className='text-sm text-gray-500 flex items-center gap-1'>
-						<img src={'/icons/clock.svg'} alt='' className='w-4 h-4 text-gray-500' />
-						<p>9 min read</p>
-					</span>
-				</div>
+				<ArticleDate date={new Date(props.date)} time={props.time} />
 			</div>
 			<p>{props.description}</p>
 		</a>
