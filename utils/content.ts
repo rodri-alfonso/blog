@@ -15,6 +15,7 @@ export const getContent = ({ slug, type }: Config): Content => {
 
 export const getPartialContent = ({ type }: PartialConfig): PartialContent[] => {
 	const files = fs.readdirSync(path.join(`content/${type}`))
+
 	const allContentData = files.map((fileName) => {
 		const slug = fileName.replace('.mdx', '')
 		const fileContents = fs.readFileSync(path.join(`content/${type}/${slug}.mdx`), 'utf8')
@@ -26,5 +27,5 @@ export const getPartialContent = ({ type }: PartialConfig): PartialContent[] => 
 		} as PartialContent
 	})
 
-	return allContentData
+	return allContentData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
