@@ -6,6 +6,8 @@ import Page from '@layouts/Page'
 import Link from 'next/link'
 import IconOrchester from '@assets/icons'
 import styles from '@styles/content.module.css'
+import { remarkCodeHike } from '@code-hike/mdx'
+import { CH } from '@code-hike/mdx/components'
 
 export default function Article({ content, date, description, title }: Content) {
 	const Banner = () => {
@@ -40,7 +42,7 @@ export default function Article({ content, date, description, title }: Content) 
 			<div className='max-w-screen-md m-auto grid gap-20'>
 				<Banner />
 				<article className={`${styles.content} prose`}>
-					<MDXRemote {...content} />
+					<MDXRemote {...content} components={{ CH }} />
 				</article>
 			</div>
 		</Page>
@@ -58,7 +60,14 @@ export const getStaticPaths = () => {
 
 export const getStaticProps = async ({ params }: any) => {
 	const post = getContent({ type: 'articles', slug: params.slug })
-	const mdxSource = await serialize(post.content)
+	const mdxSource = await serialize(post.content, {
+		mdxOptions: {
+			remarkPlugins: [
+				[remarkCodeHike, { autoImport: false, theme: 'one-dark-pro', showCopyButton: true, lineNumbers: true }],
+			],
+			useDynamicImport: true,
+		},
+	})
 	return {
 		props: {
 			...post,

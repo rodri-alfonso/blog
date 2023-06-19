@@ -32,7 +32,9 @@ Por supuesto que no es lo mismo crear un theme para un sistema de diseño entero
 
 Las [CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) son increiblemente utiles pero tienen sus limitaciones con lo que podemos declarar. Sin embargo para los casos mas generales suelen cubrir las necesidades. Asi puede verse un modelo básico de theme con CSS properties:
 
-```css
+<CH.Code>
+
+```css styles.css
 :root {
 	--background-color: #fff;
 	--background-alternative-color: #f1faee;
@@ -49,6 +51,8 @@ Las [CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_
 }
 ```
 
+</CH.Code>
+
 ### Themes basados en CSS in JS
 
 _Vanilla Extract | React Provider | TypeStyle | Styled Components_
@@ -57,20 +61,22 @@ Acá nos metemos en el lodo. Como menione, las custom properties son muy poderos
 
 Asi puede verse modelo basico de theme CSS in JS: (va a variar dependiendo de la tecnología o el framework-ui que se esté utilizando):
 
-```javascript
+<CH.Code>
+
+```javascript theme.js
 export const theme = {
 	colors: {
-		 background: '#fff',
-		 backgroundAlternative: '#f1faee',
-	   primary: '#cdb4db',
-     secondary: '#ffc8dd',
-     acent: '#a2d2ff'
+      background: '#fff',
+	  backgroundAlternative: '#f1faee',
+	  primary: '#cdb4db',
+      secondary: '#ffc8dd',
+      acent: '#a2d2ff'
 	}
 	fonts: {
 		body: 'Inter, system-ui',
 		heading: 'Georgia, serif',
 		sizes: {
-			xs: 8
+			xs: 8,
 			sm: 12,
 			md: 14,
 			lg: 18
@@ -78,6 +84,8 @@ export const theme = {
 	}
 }
 ```
+
+ </CH.Code>
 
 ## When should I use a theme?
 
