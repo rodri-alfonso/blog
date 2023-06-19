@@ -15,7 +15,7 @@ export default function Header() {
 					<Link
 						key={link.name + index}
 						href={link.path}
-						className={`px-3 py-2 capitalize font-medium rounded-lg hover:text-black transition-all active:scale-95 ${
+						className={`px-3 py-2 capitalize font-medium hover:bg-gray-100 rounded-lg hover:text-black transition-all active:scale-95 ${
 							isInPath(link.path) ? 'bg-gray-100 text-gray-900' : 'text-gray-500'
 						}`}
 					>

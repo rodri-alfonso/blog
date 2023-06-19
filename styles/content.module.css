@@ -20,7 +20,3 @@
 .content > p {
 	@apply text-lg font-normal text-gray-600;
 }
-
-.content > ul {
-	@apply list-disc pl-3 grid gap-1;
-}

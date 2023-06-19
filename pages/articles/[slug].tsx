@@ -39,7 +39,7 @@ export default function Article({ content, date, description, title }: Content) 
 		<Page title={title} description={description} hideHeader>
 			<div className='max-w-screen-md m-auto grid gap-20'>
 				<Banner />
-				<article className={styles.content}>
+				<article className={`${styles.content} prose`}>
 					<MDXRemote {...content} />
 				</article>
 			</div>
