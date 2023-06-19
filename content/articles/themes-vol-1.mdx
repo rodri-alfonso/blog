@@ -1,0 +1,107 @@
+---
+date: 7 jun 2023
+title: Themes for interface scalability, Vol. 1
+description: I'll be explaning what is a theme, how it works and when you should use it.
+illustration: C4_27
+readingTime: 10
+highlight: true
+---
+
+_Antes de comenzar es importante mencionar que en un entorno del “mundo real”, para poder implementar exitosamente un theme en nuestra aplicacion, debe existir una coordinacion y preparacion con el equipo de diseño. Son ellos los encargados del “look and feel” de la aplicación y con ellos quienes definen las propiedades, tamaños, etc. Este, es un factor clave a tener en cuenta. Cubriremos este tema mas adelante._
+
+<br />
+
+## What's a theme?
+
+Podemos pensar un theme como un contrato en el cual definimos todas las propiedades visuales y [atomicas](https://atomicdesign.bradfrost.com/chapter-2/#atoms) que van a determinar el “look and feel” de nuestra interfaz de usuario. Tener un modelo de theme, nos ayuda a tener una consistencia visual a lo largo de nuestra aplicación y un mayor control sobre los estilos.
+
+El nivel mas basico de definicion para propiedades de un theme, son los colores. Sin embargo tambien podemos (y en algunos casos debemos), tener definiciones a nivel de espaciados para el layout (gaps, paddings), media queries, familia tipografica, escalas tipograficas, animaciones, transiciones, etc.
+
+### Why It's important a theme?
+
+Los beneficios de tener un theme en tu aplicación sobre tu interfaz de usuario:
+
+- Escalabilidad
+- Felxibilidad
+- Consistencia
+- Mantenibilidad
+
+Por supuesto que no es lo mismo crear un theme para un sistema de diseño entero, que utilizar un modelo de theme en una aplicacion pequeña/mediana para estandarizar las medidas y las unidades primitivas de tu aplicacion. Asi que me gustaria hacer una distinción entre dos tipos de modelos:
+
+### Themes basados en CSS Properties
+
+Las [CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) son increiblemente utiles pero tienen sus limitaciones con lo que podemos declarar. Sin embargo para los casos mas generales suelen cubrir las necesidades. Asi puede verse un modelo básico de theme con CSS properties:
+
+```css
+:root {
+	--background-color: #fff;
+	--background-alternative-color: #f1faee;
+	--color-primary: #cdb4db;
+	--color-secondary: #ffc8dd;
+	--color-acent: #a2d2ff;
+
+	--font-heading: Georgia, serif;
+	--font-body: Inter, system-ui;
+	--font-size-xs: 8px;
+	--font-size-sm: 12;
+	--font-size-md: 14;
+	--font-size-lg: 18;
+}
+```
+
+### Themes basados en CSS in JS
+
+_Vanilla Extract | React Provider | TypeStyle | Styled Components_
+
+Acá nos metemos en el lodo. Como menione, las custom properties son muy poderosas pero cuando necesitamos definiciones mas complejas o dinamicas, necesitamos recurrir a alguna utilidad extra.
+
+Asi puede verse modelo basico de theme CSS in JS: (va a variar dependiendo de la tecnología o el framework-ui que se esté utilizando):
+
+```javascript
+export const theme = {
+	colors: {
+		 background: '#fff',
+		 backgroundAlternative: '#f1faee',
+	   primary: '#cdb4db',
+     secondary: '#ffc8dd',
+     acent: '#a2d2ff'
+	}
+	fonts: {
+		body: 'Inter, system-ui',
+		heading: 'Georgia, serif',
+		sizes: {
+			xs: 8
+			sm: 12,
+			md: 14,
+			lg: 18
+		}
+	}
+}
+```
+
+## When should I use a theme?
+
+Asi como todo tiene su caso de uso, el modelo de theme no es la excepción. Aunque la motivacion mas comun para incorporar un theme (al menos con CSS properties), es para implementar un “white or dark mode”, aca algunas razones para saber si necesitas implementar un theme en tu aplicación:
+
+- Si tu aplicacion tiene un volumen de componentes UI media/grande y depende mucho de su “look and feel”.
+- Si tu aplicacion necesita actualizar periodicamente o por eventos/temporadas su identidad.
+- Si estas creando una libreria de componentes basado en algun sistema de diseño. (sobre todo este punto)
+
+¿Cuando no seria necesario implementar un theme?
+
+- Si tu aplicacion tiene un volumen pequeño de componentes UI o una interfaz de usuario sencilla
+- Si estas desarrollando un prototipo o demo.
+
+Recordemos que hay modelos mas simples y mas complejos. Pero siempre deberiamos al menos tener “themizado” al menos, nuestros colores. Si queremos
+
+Yo trataria de implementar siempre un theme. Al menos con CSS properties. Lo importante, es tener una consistencia en la aplicacion
+
+La implementacion de un theme, nos proporciona una flexibilidad y una consistencia sin igual para nuestra interfaz de usuario. Incluso si ya estás utilizando un framework de ui, vale la pena implementar un theme. Aunque la mayoria, dispone de una manera de customizar el theme base.
+
+Para tener que impleemntar un theme a nivel de CSS in JS, se tienen que dar algunas condiciones y requerimientos especificos como por ejemplo tener que crear una libreria de componentes o utilizar una. No deberia ser una decision que se tome a la ligera. Para mas informacion, recomiendo [leer este articulo](https://kentcdodds.com/blog/build-vs-buy-component-libraries-edition) de Kent.C.Dodds.
+
+## Conclusions
+
+Hay modelos mas simples y otros mas complejos de themes. Algunos estan ligados a la tecnologia en la que se este escribiendo pero siempre deberiamos velar por los modelos
+
+Siempre deberiamos escribir interfaces escalables y mantenibles. La idea es tener consistencia a travez de toda nuestra UI. Aunque esto tambien lo podemos consigamos a traves de CSS properties

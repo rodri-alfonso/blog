@@ -18,7 +18,7 @@ export default function TopArticles({ articles }: Props) {
 						key={article.slug}
 						description={article.description}
 						illustration={article.illustration}
-						time={article.time}
+						readingTime={article.readingTime}
 						hightlight={article.highlight}
 					/>
 				))}

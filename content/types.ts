@@ -3,7 +3,7 @@ export interface DataContent {
 	description: string
 	title: string
 	illustration: string
-	time: number
+	readingTime: number
 	highlight: boolean
 }
 

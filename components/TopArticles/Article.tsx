@@ -6,7 +6,7 @@ interface Props {
 	date: string
 	href: string
 	illustration: string
-	time: number
+	readingTime: number
 	hightlight: boolean
 }
 
@@ -23,7 +23,7 @@ export default function Article(props: Props) {
 
 			<div className='grid gap-1'>
 				<h3 className='font-semibold first-letter:uppercase text-lg'>{props.title}</h3>
-				<ArticleDate date={new Date(props.date)} time={props.time} />
+				<ArticleDate date={new Date(props.date)} time={props.readingTime} />
 			</div>
 			<p>{props.description}</p>
 		</a>
