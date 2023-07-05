@@ -1,17 +1,31 @@
+import AvatarOrchester from '@assets/avatars'
+
 interface Props {
 	title: string
 	description: string
-	topic: 'css' | 'language' | ''
+	topic: 'css' | 'javascript' | 'news' | 'webdev'
 }
 
 export default function NoteContent({ title, description, topic }: Props) {
+	const topicMap = {
+		css: 'CSS Mastering',
+		javascript: 'JavaScript Mastering',
+		news: 'News',
+		webdev: 'Web Mastering',
+	}
+	const avatarcMap = {
+		css: 'glasses',
+		javascript: 'cute',
+		news: 'earpods',
+		webdev: 'default',
+	}
+
 	return (
 		<article className=' grid gap-6'>
 			<div className='flex gap-4 items-center'>
-				<img src='/avatar.svg' alt='icon' className='w-10 h-10' />
-
+				<AvatarOrchester type={avatarcMap[topic]} size={50} />
 				<div className=''>
-					<h2 className='text-lg font-medium -mb-1'>{title}</h2>
+					<h2 className='text-lg font-medium -mb-1'>{topicMap[topic]}</h2>
 					<p className='text-gray-500'>{description}</p>
 				</div>
 			</div>
