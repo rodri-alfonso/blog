@@ -8,8 +8,8 @@ interface Props {
 
 export default function TopArticles({ articles }: Props) {
 	return (
-		<section className='grid gap-8'>
-			<div className='grid grid-cols-3 gap-x-8 gap-y-14'>
+		<section className='grid gap-8 pt-4 px-6'>
+			<div className='grid grid-cols-2 gap-x-12 gap-y-14'>
 				{articles.map((article) => (
 					<Article
 						date={article.date}
