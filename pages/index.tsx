@@ -1,10 +1,8 @@
-import { Playfair_Display } from 'next/font/google'
 import Page from '@layouts/Page'
 import { getPartialContent } from '../utils/content'
 import TopArticles from '@components/TopArticles'
 import Banner from '@components/Banner'
-
-const inter = Playfair_Display({ subsets: ['latin'], weight: ['400', '500', '600'] })
+import Recomendator from '@components/Recomendator'
 
 export default function Home({ artices }: any) {
 	return (
@@ -14,8 +12,9 @@ export default function Home({ artices }: any) {
 				description='I write about UI architecture, design systems, typographies, CSS, and web performance.'
 			/>
 
-			<div className='grid gap-20'>
+			<div className='grid gap-16'>
 				<TopArticles articles={artices} />
+				<Recomendator />
 			</div>
 		</Page>
 	)
