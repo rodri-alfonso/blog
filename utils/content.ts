@@ -5,7 +5,7 @@ import { PartialContent, Content, PartialConfig, Config } from '@content/types'
 import { serialize } from 'next-mdx-remote/serialize'
 import { remarkCodeHike } from '@code-hike/mdx'
 
-export const getMdxSource = async (content: string) => {
+export const serializeMdx = async (content: string) => {
 	return await serialize(content, {
 		mdxOptions: {
 			remarkPlugins: [
@@ -43,20 +43,18 @@ export const getPartialContent = ({ type }: PartialConfig): PartialContent[] => 
 	return allContentData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export const getSnippets = async () => {
+export const getFullContent = async ({ type }: PartialConfig) => {
 	const promises = []
 
-	for await (const entry of fs.opendirSync('content/snippets')) {
+	for await (const entry of fs.opendirSync(`content/${type}`)) {
 		const slug = entry.name.replace('.mdx', '')
 
-		const fileContents = fs.readFileSync(path.join(`content/snippets/${slug}.mdx`), 'utf8')
+		const fileContents = fs.readFileSync(path.join(`content/${type}/${slug}.mdx`), 'utf8')
 		const { data, content } = matter(fileContents)
 
-		const parsedMdx = await getMdxSource(content)
-
-		promises.push({ data, content: parsedMdx })
+		const serializedContent = await serializeMdx(content)
+		promises.push({ data, content: serializedContent })
 	}
 
-	const snippets = await Promise.all(promises)
-	return snippets
+	return await Promise.all(promises)
 }

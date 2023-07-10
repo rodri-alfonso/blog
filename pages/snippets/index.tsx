@@ -1,7 +1,7 @@
 import Page from '@layouts/Page'
 import Banner from '@components/Banner'
 import Collapsable from '@components/Collapsable'
-import { getSnippets } from '@utils/content'
+import { getFullContent } from '@utils/content'
 import { MDXRemote } from 'next-mdx-remote'
 import { CH } from '@code-hike/mdx/components'
 
@@ -32,7 +32,7 @@ export default function Snippets({ snippets }: any) {
 }
 
 export const getStaticProps = async () => {
-	const snippets = await getSnippets()
+	const snippets = await getFullContent({ type: 'snippets' })
 
 	return {
 		props: {
