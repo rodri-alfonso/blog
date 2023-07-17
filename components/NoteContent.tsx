@@ -1,6 +1,7 @@
 import AvatarOrchester from '@assets/avatars'
 import { MDXRemote } from 'next-mdx-remote'
 import { CH } from '@code-hike/mdx/components'
+import styles from '@styles/content.module.css'
 
 const TYPE_MAP = {
 	news: 'News 🗞️',
@@ -33,15 +34,15 @@ export default function NoteContent({ description, topic, type, content }: Props
 	}
 
 	return (
-		<article className='flex justify-center gap-4'>
+		<article className='flex gap-4 hover:bg-gray-100 rounded-xl p-6'>
 			<AvatarOrchester type={avatarcMap[topic || 'webdev']} size={50} />
-			<div className='grid gap-0.5  w-9/12'>
+			<div className='grid gap-0.5'>
 				<div className='flex justify-between items-center gap-2'>
 					<h2 className='text-lg font-medium -mb-1'>{topicMap[topic]}</h2>
 					<span className='bg-gray-200 font-semibold text-sm rounded-full px-2.5 py-1'>{TYPE_MAP[type]}</span>
 				</div>
 				<p className='text-gray-500'>{description}</p>
-				<article className='pt-4'>
+				<article className={`pt-4 ${styles.content} prose`}>
 					<MDXRemote components={{ CH }} {...content} />
 				</article>
 			</div>
