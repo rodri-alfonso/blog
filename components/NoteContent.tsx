@@ -32,10 +32,11 @@ export default function NoteContent({ description, topic, type, content }: Props
 		news: 'earpods',
 		webdev: 'default',
 	}
+	const avatarType = avatarcMap[topic || 'webdev'] as any
 
 	return (
 		<article className='flex gap-4 hover:bg-gray-100 rounded-xl p-6'>
-			<AvatarOrchester type={avatarcMap[topic || 'webdev']} size={50} />
+			<AvatarOrchester type={avatarType} size={50} />
 			<div className='grid gap-0.5'>
 				<div className='flex justify-between items-center gap-2'>
 					<h2 className='text-lg font-medium -mb-1'>{topicMap[topic]}</h2>
