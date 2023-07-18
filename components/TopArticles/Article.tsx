@@ -6,7 +6,6 @@ interface Props {
 	description: string
 	date: string
 	href: string
-	illustration: string
 	readingTime: number
 	hightlight: boolean
 	index: number
