@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { PartialContent, Content, PartialConfig, Config } from '@content/types'
+import { PartialContent, Content, PartialConfig, Config, FullContent } from '@content/types'
 import { serialize } from 'next-mdx-remote/serialize'
 import { remarkCodeHike } from '@code-hike/mdx'
 
@@ -43,8 +43,8 @@ export const getPartialContent = ({ type }: PartialConfig): PartialContent[] => 
 	return allContentData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export const getFullContent = async ({ type }: PartialConfig) => {
-	const promises = []
+export const getFullContent = async ({ type }: PartialConfig): Promise<FullContent[]> => {
+	const promises = [] as FullContent[]
 
 	for await (const entry of fs.opendirSync(`content/${type}`)) {
 		const slug = entry.name.replace('.mdx', '')
@@ -53,7 +53,19 @@ export const getFullContent = async ({ type }: PartialConfig) => {
 		const { data, content } = matter(fileContents)
 
 		const serializedContent = await serializeMdx(content)
-		promises.push({ data, content: serializedContent })
+
+		const fullContent: FullContent = {
+			content: serializedContent,
+			date: data.date,
+			description: data.description,
+			highlight: data.highlight,
+			readingTime: data.readingTime,
+			title: data.title,
+			topic: data.topic,
+			type: data.type,
+		}
+
+		promises.push(fullContent)
 	}
 
 	return await Promise.all(promises)
