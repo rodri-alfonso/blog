@@ -1,7 +1,5 @@
+import MDXContent from './MDXContent'
 import AvatarOrchester from '@assets/avatars'
-import { MDXRemote } from 'next-mdx-remote'
-import { CH } from '@code-hike/mdx/components'
-import styles from '@styles/content.module.css'
 import { FullContent, DataTopic } from '@content/types'
 import { CONTENT_TYPE_MAP } from '@utils/config'
 import { Avatar } from '@assets/avatars'
@@ -29,9 +27,7 @@ export default function NoteContent({ description, topic, type, content }: FullC
 					<span className='bg-gray-200 font-semibold text-sm rounded-full px-2.5 py-1'>{CONTENT_TYPE_MAP[type]}</span>
 				</div>
 				<p className='text-gray-500'>{description}</p>
-				<article className={`pt-4 ${styles.content} prose`}>
-					<MDXRemote components={{ CH }} {...content} />
-				</article>
+				<MDXContent content={content} className='pt-4 prose' />
 			</div>
 		</article>
 	)
