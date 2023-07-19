@@ -1,11 +1,15 @@
 import Page from '@layouts/Page'
-import { getPartialContent, getFullContent } from '../utils/content'
+import { getPartialContent } from '@utils/content'
 import TopArticles from '@components/TopArticles'
 import Banner from '@components/Banner'
 import Recomendator from '@components/Recomendator'
-import TopNotes from '@components/TopNotes'
+import { Content } from '@content/types'
 
-export default function Home({ artices, notes }: any) {
+interface Props {
+	articles: Content[]
+}
+
+export default function Home({ articles }: Props) {
 	return (
 		<Page title='' description='' footer>
 			<Banner
@@ -14,22 +18,19 @@ export default function Home({ artices, notes }: any) {
 			/>
 
 			<div className='grid gap-8'>
-				<TopArticles articles={artices} />
+				<TopArticles articles={articles} />
 				<Recomendator />
-				<TopNotes notes={notes} />
 			</div>
 		</Page>
 	)
 }
 
 export const getStaticProps = async () => {
-	const artices = getPartialContent({ type: 'articles' })
-	const notes = await getFullContent({ type: 'notes' })
+	const articles = getPartialContent({ type: 'articles' })
 
 	return {
 		props: {
-			artices,
-			notes,
+			articles,
 		},
 	}
 }
