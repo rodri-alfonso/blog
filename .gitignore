@@ -26,6 +26,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+LOCAL_CHECKLIST.md
 
 # vercel
 .vercel
