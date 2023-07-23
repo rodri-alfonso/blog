@@ -8,13 +8,15 @@ topic: ''
 type: ''
 ---
 
-Hello there! 👋 in this article I want to focus mainly on **the concept** and **the mental model** behind a theme. We are going to talk about what is, what it is used for, pros and cons, and when we should use it so let's start with the first question:
+Hello there! 👋 This is the first of a series of articles that I'll be talking about themes. In this first edition I want to focus mainly on **the concept** and **the mental model** behind a theme.
+
+We are going to talk about what is, what it is used for, pros and cons, and when we should use it so let's start with the first question:
 
 <br />
 
 ## What's a theme?
 
-We can think about a theme as our **source of truth of styles**, a contract in which we define all the visual and [atomic](https://atomicdesign.bradfrost.com/chapter-2/#atoms) properties that will determine the **look and feel** of our user interface (colors, shadows, typography, etc).
+We can think about a theme as our **source of truth of styles**, a contract in which we define all the visual and [atomic](https://atomicdesign.bradfrost.com/chapter-2/#atoms) properties that will determine the **look and feel** of our user interface (like colors, typography, shadows, etc)
 
 Having a theme model helps us to have a **visual consistency** throughout our application and **more control over the styles**. Let's see a basic example of what a theme implementation would look like in a `.jsx` file (please, don't do this at home, it's just an example):
 
@@ -44,33 +46,33 @@ const Button = () => (
 
 </CH.Code>
 
-Now, if we wanted to update the borders or the colors of our application, we would only have to update our theme and we would have that update across the whole application.
+Now, imagine that you're using the theme in every component and wanted to update the colors in the entire application, we only have to update one thing: our theme
 
 ## Why It's important a theme?
 
-More and more complex user interfaces are being built and as an application grows, it can be a challenge **to maintain** or **evolve** its styles. That is where themes come in to offer us:
+More and more complex user interfaces are being built and as an application grows, it can be a challenge **to maintain** or **evolve** its styles. That's where themes come in to offer us:
 
-1. **Scalability:** we can add new parameters or changes in an instant, throughout the application.
+1. **Scalability:** we can add new parameters or changes (enriching or cutting out) to the main structure throughout the application.
 
-2. **Flexibility:** having a UI based on themes, we can have more than one theme, for more than one need.
+2. **Flexibility:** having an user interface based on themes, we can have more than one theme, for more than one need (like dark and light mode).
 
-3. **Consistency:** unified standards and criteria throughout the application. No more loose definitions.
+3. **Consistency:** unified standards and criteria throughout the application. We can significantly reduce the loose definitions.
 
 4. **Maintainability:** updates of colors, scales and changes in one place.
 
 #### Disadvantages **of having a theme**
 
-Although the benefits can be many, let's remember that **everything has its cost** and implementing a theme is no exception because it can represent a **cost of time** and in some cases, a challenge. These are some of the disadvantages that we will have to deal with:
+Yes, there are many benefits but let's remember that **everything has its cost** and implementing a theme is no exception because **it can represent a cost of time or effort** and sometimes, a challenge. These are some of the disadvantages we may have to deal with:
 
-**Time:** In a real world scenario with an interdisciplinary team, a theme requires coordination with the design team and sometimes the creation of a design system or ui kit (depending on the needs of the product). And both design, coordination and then development can take a vital time in delivering value to a product or its business model. \*(although, once we have the theme, then changes or updates to our ui are incredibly fast, I will take into account the initial time cost of implementation).
+**Time:** In a real world scenario with an interdisciplinary team, a theme requires coordination with the design team and sometimes the creation of a [design system](https://www.nngroup.com/articles/design-systems-101/) or a UI KIT. And both design, coordination and then development can take a vital time in delivering value to a product or its business model. _(once we have a theme then, changes or updates to the UI are incredibly fast, I will take into account the initial time cost of implementation)._
 
-**Complexity:** Depending on the need of the product or the motivation of the team, we will need to stop and think about the architecture of our user interface and come up with the most suitable solution. Think about a scalable structure.
+**Complexity:** Depending on **the need of the product**, we will need to think about the **architecture of styles** of our user interface and come up with the most suitable approach or solution.
 
-**Integration of technologies:** If we are not using any framework-ui in our application, we should consider integrating some tool, because if we need a theme a little more complex than the definitions provided by CSS Cuesotm properties or updates in a "programmatic" way then we will need some help. Some options are the CSS in JS styling ways, however we must be very careful because many options come with a performance cost at runtime, however there are alternatives such as Vanilla Extract or Panda-CSS that already solve this aspect.
+**Integration of technologies:** If we are not using any [framework-ui](https://www.ibm.com/docs/en/ma-pmio/1.0.3?topic=framework-ui) in our application, we should consider integrating some tool, because if we need a theme a little more complex than the definitions provided by CSS Custom properties or updates in a "programmatic" way then, we will need some extra help. Some options are the [CSS in JS](https://cssinjs.org/?v=v10.10.0) styling ways, however we must be very careful because many options come with a performance [cost at runtime](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b), however there are alternatives such as [Vanilla Extract](https://vanilla-extract.style/) or [Panda-CSS](https://panda-css.com/) that already solve this aspect but makes your styles a bit complex (and powerful!). There's a trade-off that you have to take
 
 ## When shoul I use a theme?
 
-Just as everything has its use case, the theme model is no exception. Although the most common motivation for incorporating a theme (at least with CSS properties), is to implement a "white or dark mode", here are some reasons to know if you need to implement a more complex theme in your application:
+Just as everything has its use case, the theme model is no exception. Although the most common motivation for incorporating a theme (at least with CSS properties), is having a "white or dark mode", here are some reasons to know if you need to implement a more complex theme model in your application:
 
 1. If your application has a medium/large volume of UI components and depends a lot on its look and feel.
 2. If your application needs to update periodically or by events/seasons its identity.
@@ -79,50 +81,23 @@ Just as everything has its use case, the theme model is no exception. Although t
 
 #### When it would not be necessary to implement a theme?
 
-If your application has a small volume of UI components or a simple user interface or even if you are developing a prototype/demo.
+If your application has a small volume of UI components or a simple user interface or even if you are developing a prototype/demo and you need to go really fast.
 
-_While the points mentioned above can help us make a decision on whether or not to include a theme in our UI architecture, they are not absolute reasons. It will depend a lot on the needs of your application, its size, or if you are already using an ui framework (tailwind-css, material-ui, etc)._
+_While the points mentioned above can help us make a decision on whether or not to include a theme in our UI architecture, they are not absolute reasons. It will depend a lot on the needs of your application, its size, or if you are already using any framework-ui (tailwind-css, material-ui, etc)._
 
 ## Different flavours
 
-Of course it is not the same to create a theme for an entire design system, than to use a theme model in a small/medium application to standardize the measures and primitive units of your application. So I would like to make a distinction between two types of models:
+Of course it is not the same to create a theme for an entire design system, than to use a theme model in a small/medium application to standardize the measures and primitive units of your application. So I would like to make a distinction between two model types:
 
 ### Partial Themes, based on CSS Custom Properties
 
-It's hard to talk about themes without mentioning [CSS custom properties. They are incredibly useful but have their limitations with what we can declare. They still can't cover all the needs involved in complex theming throughout an application. However for the most general cases, they usually cover the needs. Here you can see a basic theme model with CSS properties (I'm sure you are familiar with it):
+It's hard to talk about themes without mentioning CSS custom properties. They are incredibly useful but have their limitations with what we can declare. They still can't cover all the needs involved in complex theming throughout an application. However for the most general cases, they usually cover the needs of a basic theme.
 
-<CH.Code>
-
-```css styles.css
-:root {
-	--background-color: #fff;
-	--background-alternative-color: #f1faee;
-	--color-primary: #cdb4db;
-	--color-secondary: #ffc8dd;
-	--color-acent: #a2d2ff;
-
-	--font-heading: Georgia, serif;
-	--font-body: Inter, system-ui;
-	--font-size-xs: 8px;
-	--font-size-sm: 12px;
-	--font-size-md: 14px;
-	--font-size-lg: 18px;
-}
-```
-
-</CH.Code>
-
-##### With CSS variables we can:
-
-- Standardize colors, shadows and gradients.
-- Standardize fonts (with their scales and variants).
-- Standardize layout measures.
-- Add progressive enhancements or "fallbacks" to a property.
-- Create schemes for a "native" dark and light mode.
-
-### Themes basados en CSS in JS
+### Themes based on CSS in JS
 
 _Vanilla Extract | Panda CSS | TypeStyle | Styled Components_
+
+With CSS in JS themes we can define a more complex structure of styles and properties based on structures like objects, arrays, etc or any structure that we need. Every library can implement the theme model by different ways but every one of them has the same goal: **to provide a theme model that is scalable, flexible and maintainable**.
 
 ## What else should I know?
 
@@ -169,3 +144,7 @@ const Button = () => <button style={{ backgroundColor: '#cdb4db', borderRadius: 
 ```
 
 </CH.Code>
+
+<br />
+
+_I hope it has helped you understand what a theme is and why it is important in our user interfaces. In the next sections we are going to be talking more in deep about how to build effective themes._
