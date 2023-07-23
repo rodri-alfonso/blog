@@ -21,7 +21,7 @@ export default function Snippets({ snippets }: Props) {
 				<h1 className='text-xl font-medium pl-4'>One line utilities</h1>
 				<div className='grid gap-0.5 text-gray-600 hover:text-gray-400 font-medium first-letter:capitalize'>
 					{snippets.map((snippet, index: number) => (
-						<Collapsable key={snippet.title} label={snippet.title} tag={snippet.topic} open={index === 0}>
+						<Collapsable key={snippet.title} label={snippet.title} tag={snippet.topic} open>
 							<MDXRemote components={{ CH }} {...snippet.content} />
 						</Collapsable>
 					))}
